@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Análise de Perfil Corporal | Barriga Zero</title>
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <!-- Meta Pixel Code -->
+    <script>
+        !function (f, b, e, v, n, t, s) {
+            if (f.fbq) return; n = f.fbq = function () {
+                n.callMethod ?
+                    n.callMethod.apply(n, arguments) : n.queue.push(arguments)
+            };
+            if (!f._fbq) f._fbq = n; n.push = n; n.loaded = !0; n.version = '2.0';
+            n.queue = []; t = b.createElement(e); t.async = !0;
+            t.src = v; s = b.getElementsByTagName(e)[0];
+            s.parentNode.insertBefore(t, s)
+        }(window, document, 'script',
+            'https://connect.facebook.net/en_US/fbevents.js');
+        fbq('init', '794708607004793');
+        fbq('track', 'PageView');
+    </script>
+    <noscript><img height="1" width="1" style="display:none"
+            src="https://www.facebook.com/tr?id=794708607004793&ev=PageView&noscript=1" /></noscript>
+    <!-- End Meta Pixel Code -->
+    <!-- UTMify -->
+    <script src="https://cdn.utmify.com.br/scripts/utms/latest.js" data-utmify-prevent-xcod-sck=""
+        data-utmify-prevent-subids="" async="" defer=""></script>
+</head>
+
+<body>
+
+    <header class="quiz-header">
+        <div class="header-wrapper">
+            <div class="logo-area" style="margin: 0 auto; justify-content: center;">
+                <i class="fas fa-heartbeat"></i> <span>Barriga Zero</span>
+            </div>
+            <div class="progress-container">
+                <div class="progress-bar" id="progress-bar" style="width: 5%;"></div>
+            </div>
+        </div>
+    </header>
+
+
+    <main class="quiz-container">
+        <div id="quiz-content" class="fade-in">
+            <!-- Questions will be injected here by script.js -->
+            <div class="loading-spinner">
+                <i class="fas fa-circle-notch fa-spin"></i> Carregando...
+            </div>
+        </div>
+    </main>
+
+    <!-- Sales Page Content (Hidden Initially) -->
+    <div id="sales-page" class="sales-container" style="display: none;">
+        <!-- Hero Section -->
+        <header class="hero-result">
+            <span class="result-badge">Análise Concluída em <span id="current-date"></span></span>
+            <h1 class="headline">Seu Protocolo Metabólico de 3 Fases Está Pronto</h1>
+            <p class="subheadline">Baseado nas suas respostas, descobrimos exatamente o que estava travando o seu
+                emagrecimento.</p>
+
+            <!-- VSL Placeholder -->
+            <div class="vsl-wrapper">
+                <i class="fas fa-play-circle" style="font-size: 5rem; color: #fff; cursor: pointer;"></i>
+                <!-- Embed Video Here Later -->
+            </div>
+
+            <p style="text-align: center; color: #94a3b8; font-size: 0.9rem;">
+                <i class="fas fa-volume-up"></i> Verifique se o som está ligado
+            </p>
+        </header>
+
+        <!-- Dynamic Diagnostic Card -->
+        <section class="diagnostic-card" style="margin: 20px;">
+            <div class="diagnostic-header">
+                <span class="diagnostic-tag">Diagnóstico Personalizado</span>
+                <i class="fas fa-fingerprint" style="color: var(--primary);"></i>
+            </div>
+            <div id="dynamic-profile" style="color: #fff; margin-bottom: 15px; font-size: 1.1rem;">
+                Carregando análise...
+            </div>
+            <div class="diagnostic-grid">
+                <div class="diag-item">
+                    <strong>Tipo Metabólico</strong>
+                    <span id="diag-gender">Feminino</span>
+                </div>
+                <div class="diag-item">
+                    <strong>Zona Alvo</strong>
+                    <span id="diag-zone">Corpo Inteiro</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- Offer Section -->
+        <section id="offer" class="offer-box">
+            <!-- Timer Bar -->
+            <div class="timer-bar" id="timer-display"
+                style="position: absolute; top: 0; left: 0; width: 100%; border-radius: 20px 20px 0 0;">
+                15:00
+            </div>
+            <br><br>
+
+            <h2 class="section-title">O que você vai receber:</h2>
+            <img src="https://barrigazero.lovable.app/lovable-uploads/e8787820-20dc-42ce-95b6-7333ebc10928.png"
+                alt="App Interface Mockup" class="bundle-image">
+
+            <ul class="features-list">
+                <li class="feature-item"><i class="fas fa-check-circle"></i> <span><strong>Acesso Vitalício</strong> ao
+                        App
+                        Barriga Zero</span></li>
+                <li class="feature-item"><i class="fas fa-check-circle"></i> <span><strong>Cronograma de
+                            Treinos</strong>
+                        Personalizado</span></li>
+                <li class="feature-item"><i class="fas fa-check-circle"></i> <span><strong>Cardápio Alimentar</strong>
+                        (Sem
+                        passar fome)</span></li>
+                <li class="feature-item"><i class="fas fa-check-circle"></i> <span><strong>Bônus:</strong> Comunidade
+                        Vip</span></li>
+            </ul>
+
+            <!-- Order Bumps Removed for Clean Page -->
+
+            <div class="price-tag">
+                <div
+                    style="font-size: 1rem; color: #94a3b8; text-decoration: line-through; font-weight: 500; margin-bottom: 5px;">
+                    De R$ 197,00</div>
+                R$ 27,90
+                <span style="display: block; font-size: 0.8rem; color: #22c55e;">pagamento único</span>
+            </div>
+
+            <!-- Checkout Link (Kirvano) -->
+            <a href="https://pay.kirvano.com/8aed29af-b5d0-42fc-88e0-aba18c6cb6d8" class="btn-cta">
+                QUERO COMEÇAR AGORA
+                <small><i class="fas fa-lock"></i> Compra Segura e Garantida</small>
+            </a>
+
+            <div class="trust-seals">
+                <div class="seal-item"><i class="fas fa-shield-alt"></i> Garantia de 7 Dias</div>
+                <div class="seal-item"><i class="fas fa-lock"></i> Dados Criptografados</div>
+            </div>
+
+            <div style="text-align: center; margin-top: 2rem;">
+                <p style="font-size: 0.9rem; color: var(--primary); font-weight: 700;">
+                    <i class="fas fa-star"></i> Mais de 17.432 mulheres já transformaram seus corpos
+                </p>
+            </div>
+        </section>
+
+        <!-- Social Proof (Carousel) -->
+        <section class="testimonials-section">
+            <h2 class="section-title">Quem fez, aprovou:</h2>
+
+            <div class="testimonial-carousel">
+                <div class="carousel-track">
+                    <!-- Testimonial 1 -->
+                    <div class="testimonial-card">
+                        <img src="https://randomuser.me/api/portraits/women/44.jpg" alt="Foto de Cliente"
+                            class="user-avatar">
+                        <div class="user-info">
+                            <h4>Fernanda L.</h4>
+                            <div class="stars">
+                                <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i
+                                    class="fas fa-star"></i><i class="fas fa-star"></i>
+                            </div>
+                            <p class="user-quote">"Eu achava que não tinha tempo, mas os treinos de 15min salvaram minha
+                                vida. Já perdi 4kg!"</p>
+                        </div>
+                    </div>
+                    <!-- Testimonial 2 -->
+                    <div class="testimonial-card">
+                        <img src="https://randomuser.me/api/portraits/women/65.jpg" alt="Foto de Cliente"
+                            class="user-avatar">
+                        <div class="user-info">
+                            <h4>Camila R.</h4>
+                            <div class="stars">
+                                <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i
+                                    class="fas fa-star"></i><i class="fas fa-star"></i>
+                            </div>
+                            <p class="user-quote">"O cardápio é muito fácil de seguir. Não passo fome e me sinto muito
+                                mais leve."</p>
+                        </div>
+                    </div>
+                    <!-- Testimonial 3 -->
+                    <div class="testimonial-card">
+                        <img src="https://randomuser.me/api/portraits/women/22.jpg" alt="Foto de Cliente"
+                            class="user-avatar">
+                        <div class="user-info">
+                            <h4>Patrícia S.</h4>
+                            <div class="stars">
+                                <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i
+                                    class="fas fa-star"></i><i class="fas fa-star"></i>
+                            </div>
+                            <p class="user-quote">"Melhor investimento que fiz. O app é lindo e muito simples de usar."
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <footer style="text-align: center; padding: 20px; color: #666; font-size: 0.8rem;">
+            <p>&copy; 2026 App Barriga Zero. Todos os direitos reservados.</p>
+        </footer>
+    </div>
+
+    <script src="js/script.js"></script>
+</body>
+
+</html>
