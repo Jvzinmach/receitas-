@@ -1,0 +1,644 @@
+/* === PREMIUM CALISTHENICS THEME === */
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Montserrat:wght@300;400;500;600;700;800&display=swap');
+
+:root {
+    --primary: #22c55e;
+    /* Verde Vibrante (App) */
+    --primary-light: rgba(34, 197, 94, 0.1);
+    /* Verde suave translúcido */
+    --accent: #16a34a;
+    /* Verde mais escuro */
+    --bg-page: #0b0f0d;
+    /* Preto Verdoso mais profundo */
+    --bg-card: rgba(255, 255, 255, 0.03);
+    /* Glassmorphism sutil */
+    --text-main: #ffffff;
+    /* Branco Puro para máxima legibilidade */
+    --text-muted: #94a3b8;
+    --border-light: rgba(255, 255, 255, 0.08);
+    --shadow-soft: 0 10px 40px rgba(0, 0, 0, 0.5);
+    --shadow-hover: 0 15px 35px rgba(34, 197, 94, 0.15);
+    --radius-btn: 50px;
+    --radius-card: 16px;
+    --font-main: 'Inter', sans-serif;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: var(--font-main);
+}
+
+body {
+    background-color: var(--bg-page);
+    color: var(--text-main);
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Header */
+.quiz-header {
+    background: #0b0f0d;
+    padding: 1.5rem 0;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.header-content {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 0 1.5rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.brand-logo {
+    font-size: 1.5rem;
+    font-weight: 800;
+    color: var(--text-main);
+    letter-spacing: -1px;
+}
+
+.brand-logo span {
+    color: var(--primary);
+    margin-left: 5px;
+}
+
+.logo-area {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 1.3rem;
+    font-weight: 700;
+    color: #fff;
+}
+
+.logo-area i {
+    color: var(--primary);
+    font-size: 1.5rem;
+}
+
+.header-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+}
+
+.step-text {
+    font-size: 0.75rem;
+    font-weight: 600;
+    color: #94a3b8;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+/* Main Container */
+.quiz-container {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 2rem 1.5rem;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    /* Ensure top alignment */
+    width: 100%;
+}
+
+/* Progress Bar */
+.progress-container {
+    width: 100%;
+    max-width: 600px;
+    height: 4px;
+    background: rgba(255, 255, 255, 0.1);
+    margin-top: 15px;
+}
+
+.progress-bar {
+    height: 100%;
+    background: var(--primary);
+    width: 0%;
+    transition: width 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.progress-labels {
+    display: flex;
+    justify-content: space-between;
+    font-size: 0.9rem;
+    color: var(--text-muted);
+    font-weight: 600;
+    margin-bottom: 0.8rem;
+}
+
+.progress-track {
+    height: 8px;
+    background: var(--border-light);
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.progress-fill {
+    height: 100%;
+    background: linear-gradient(90deg, var(--primary), var(--accent));
+    width: 0%;
+    transition: width 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    border-radius: 10px;
+}
+
+/* Question Section */
+.question-title {
+    font-size: 1.75rem;
+    font-weight: 700;
+    text-align: center;
+    margin-bottom: 2.5rem;
+    line-height: 1.3;
+    color: var(--text-main);
+}
+
+/* Options Grid */
+.options-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+/* Option Card Style */
+.option-card {
+    background: var(--bg-card);
+    border: 2px solid transparent;
+    border-radius: 16px;
+    padding: 1.25rem;
+    cursor: pointer;
+    transition: all 0.25s ease;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    position: relative;
+    overflow: hidden;
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+}
+
+/* Option Cards */
+.option-card.selected {
+    border-color: var(--primary);
+    background-color: #ede9fe;
+    /* Light violet tint */
+    box-shadow: 0 0 0 2px rgba(124, 58, 237, 0.2);
+}
+
+.option-card:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-hover);
+    border-color: var(--primary);
+    background-color: #f5f3ff;
+}
+
+/* Specific pill style override for text-only options if needed, but generic card works well */
+.option-card {
+    background: var(--primary-light);
+    /* Light Purple pill background by default */
+    border: 1px solid transparent;
+    border-radius: 12px;
+    padding: 1.25rem;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.03);
+    position: relative;
+    overflow: hidden;
+    margin-bottom: 0.5rem;
+}
+
+/* Content Layout inside Card */
+/* Content Layout inside Card */
+.option-image-wrapper {
+    width: 48px;
+    height: 48px;
+    flex-shrink: 0;
+    margin-right: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 50%;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.option-image {
+    width: 65%;
+    height: 65%;
+    object-fit: contain;
+}
+
+/* FontAwesome Icon Styling */
+.option-icon {
+    font-size: 1.4rem;
+    color: var(--primary);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0;
+}
+
+.option-content {
+    flex: 1;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}
+
+.option-label {
+    font-weight: 600;
+    color: var(--text-main);
+    font-size: 1rem;
+}
+
+/* Custom Radio Indicator */
+.custom-radio {
+    width: 28px;
+    height: 28px;
+    border: 2px solid #cbd5e1;
+    border-radius: 50%;
+    transition: all 0.2s;
+    flex-shrink: 0;
+    margin-left: auto;
+    /* Push to right */
+    background: white;
+}
+
+.option-card.selected .custom-radio {
+    border-color: var(--primary);
+    background: var(--primary);
+    box-shadow: 0 0 0 3px rgba(124, 58, 237, 0.1);
+}
+
+/* Remove internal dot scale animation, use simple color fill or icon */
+.custom-radio::after {
+    content: 'L';
+    /* tick icon can be used if font awesome is available, or pure css check */
+    content: '';
+    display: block;
+    width: 100%;
+    height: 100%;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='white' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='20 6 9 17 4 12'%3E%3C/polyline%3E%3C/svg%3E");
+    background-size: 60%;
+    background-position: center;
+    background-repeat: no-repeat;
+    opacity: 0;
+    transition: opacity 0.2s;
+}
+
+.option-card.selected .custom-radio::after {
+    opacity: 1;
+    transform: none;
+}
+
+/* Hide real inputs */
+input[type="radio"] {
+    display: none;
+}
+
+/* Animations */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.fade-in {
+    animation: fadeIn 0.4s ease forwards;
+}
+
+/* Result / Loading States */
+.loading-state {
+    text-align: center;
+    padding: 3rem 0;
+}
+
+.spinner {
+    width: 50px;
+    height: 50px;
+    border: 4px solid var(--border-light);
+    border-top-color: var(--accent);
+    border-radius: 50%;
+    animation: spin 1s infinite linear;
+    margin: 0 auto 1.5rem;
+}
+
+@keyframes spin {
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+.hidden {
+    display: none !important;
+}
+
+/* === CALISTHENICS THEME (Based on Screenshots) === */
+
+:root {
+    --primary: #22c55e;
+    /* Verde Vibrante */
+    --primary-light: rgba(34, 197, 94, 0.1);
+    --text-dark: #f8fafc;
+    --text-green: #22c55e;
+    --bg-card: rgba(255, 255, 255, 0.04);
+    --radius-card: 20px;
+}
+
+/* Question Title Styling */
+.question-header {
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.question-title-main {
+    font-size: 1.5rem;
+    font-weight: 800;
+    color: #fff;
+    text-transform: uppercase;
+    line-height: 1.2;
+}
+
+.question-title-highlight {
+    color: var(--primary);
+    display: block;
+    font-size: 1.8rem;
+    margin-top: 5px;
+}
+
+.question-subtitle {
+    font-size: 0.9rem;
+    color: #cbd5e1;
+    margin-top: 10px;
+    font-weight: 400;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+/* 2x2 Grid Layout for Age */
+.options-grid-2x2 {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 15px;
+}
+
+/* Specific Card Style for Age Selection */
+.age-card {
+    background-color: var(--bg-card);
+    border: 2px solid transparent;
+    border-radius: var(--radius-card);
+    overflow: hidden;
+    position: relative;
+    cursor: pointer;
+    transition: all 0.2s;
+    display: flex;
+    flex-direction: column;
+    padding-bottom: 40px;
+    /* Space for text */
+}
+
+.age-card.selected {
+    border-color: var(--primary);
+    box-shadow: 0 0 0 2px rgba(34, 197, 94, 0.2);
+}
+
+.age-card-image {
+    width: 100%;
+    height: 160px;
+    object-fit: cover;
+    object-position: top;
+}
+
+.age-card-label {
+    text-align: center;
+    font-weight: 700;
+    font-size: 0.9rem;
+    padding: 10px;
+    margin-top: auto;
+    color: #fff;
+}
+
+/* Age Card Check Indicator */
+.radio-indicator {
+    position: absolute;
+    bottom: 15px;
+    right: 15px;
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    border: 2px solid #ddd;
+    background: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    transition: all 0.2s;
+}
+
+.age-card.selected .radio-indicator {
+    background: var(--primary);
+    border-color: var(--primary);
+}
+
+.radio-indicator::after {
+    content: '✓';
+    color: white;
+    font-size: 16px;
+    font-weight: bold;
+    display: none;
+}
+
+.age-card.selected .radio-indicator::after {
+    display: block;
+}
+
+/* Social Proof Page Styles */
+.social-proof-container {
+    text-align: center;
+}
+
+.social-title {
+    font-size: 1.8rem;
+    font-weight: 800;
+    color: var(--primary);
+    margin-bottom: 1rem;
+    line-height: 1.1;
+}
+
+.social-text {
+    font-size: 1rem;
+    color: #333;
+    line-height: 1.5;
+    margin-bottom: 1.5rem;
+}
+
+.social-card {
+    background: white;
+    padding: 15px;
+    border-radius: 12px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    margin-bottom: 2rem;
+    text-align: left;
+}
+
+.btn-continue {
+    background: var(--primary);
+    color: white;
+    width: 100%;
+    padding: 16px;
+    border-radius: 50px;
+    font-weight: 700;
+    font-size: 1.1rem;
+    border: none;
+    cursor: pointer;
+    text-transform: uppercase;
+    margin-top: 1rem;
+}
+
+/* Bottom Hero Image Layout */
+.bottom-hero-container {
+    margin-top: 2rem;
+    display: flex;
+    justify-content: center;
+}
+
+.bottom-hero-image {
+    max-width: 100%;
+    max-height: 300px;
+    object-fit: contain;
+    mask-image: linear-gradient(to bottom, black 80%, transparent 100%);
+    -webkit-mask-image: linear-gradient(to bottom, black 80%, transparent 100%);
+}
+
+/* Purple Option Card (Motivation) */
+.option-card-purple {
+    background: #bd24d4;
+    /* Vivid Purple */
+    color: white;
+    border-radius: 16px;
+    padding: 1.25rem;
+    /* Increased padding */
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+    cursor: pointer;
+    transition: transform 0.2s, background 0.2s;
+    box-shadow: 0 4px 15px rgba(189, 36, 212, 0.3);
+    border: none;
+    font-weight: 600;
+}
+
+.option-card-purple:hover {
+    background: #a21eb6;
+    transform: translateY(-2px);
+}
+
+.purple-icon {
+    font-size: 1.5rem;
+    opacity: 0.9;
+    width: 32px;
+    text-align: center;
+}
+
+/* Before/After Interstitial */
+.before-after-container {
+    display: flex;
+    gap: 10px;
+    margin: 2rem 0;
+    justify-content: center;
+}
+
+.before-after-wrapper {
+    flex: 1;
+    border-radius: 16px;
+    overflow: hidden;
+    height: 300px;
+    /* Fixed height for consistency */
+    position: relative;
+    background: #eee;
+}
+
+.before-after-wrapper img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* Botão Voltar */
+.btn-back {
+    background: transparent;
+    border: 1px solid var(--border-light);
+    color: var(--text-muted);
+    padding: 8px 20px;
+    border-radius: 50px;
+    font-weight: 600;
+    cursor: pointer;
+    margin-bottom: 20px;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    transition: all 0.2s;
+}
+
+.btn-back:hover {
+    color: var(--text-main);
+    border-color: var(--primary);
+}
+
+/* Ajustes Quiz Dark */
+.question-title {
+    color: #fff;
+}
+
+.option-card {
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.option-card:hover {
+    background: rgba(34, 197, 94, 0.1);
+    border-color: var(--primary);
+}
+
+.option-label {
+    color: #ffffff;
+    font-weight: 500;
+}
+
+.custom-radio {
+    background: rgba(255, 255, 255, 0.05);
+    border: 2px solid rgba(255, 255, 255, 0.2);
+}
+
+.option-card img {
+    border-radius: 12px;
+}
+
+.body-type-icon {
+    filter: brightness(0) invert(1) sepia(1) saturate(5) hue-rotate(90deg);
+}
+
+/* Estilo para as barras de carregamento sequenciais */
+#status-steps p {
+    font-weight: 500;
+}

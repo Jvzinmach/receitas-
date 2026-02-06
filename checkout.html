@@ -1,0 +1,1988 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Seu Plano está pronto | Barriga Zero</title>
+    <!-- Montserrat Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800;900&display=swap"
+        rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <!-- Meta Pixel Code -->
+    <script>
+        !function (f, b, e, v, n, t, s) {
+            if (f.fbq) return; n = f.fbq = function () {
+                n.callMethod ?
+                    n.callMethod.apply(n, arguments) : n.queue.push(arguments)
+            };
+            if (!f._fbq) f._fbq = n; n.push = n; n.loaded = !0; n.version = '2.0';
+            n.queue = []; t = b.createElement(e); t.async = !0;
+            t.src = v; s = b.getElementsByTagName(e)[0];
+            s.parentNode.insertBefore(t, s)
+        }(window, document, 'script',
+            'https://connect.facebook.net/en_US/fbevents.js');
+        fbq('init', '794708607004793');
+        fbq('track', 'PageView');
+        fbq('track', 'InitiateCheckout');
+    </script>
+    <noscript><img height="1" width="1" style="display:none"
+            src="https://www.facebook.com/tr?id=794708607004793&ev=PageView&noscript=1" /></noscript>
+    <!-- End Meta Pixel Code -->
+    <style>
+        html {
+            scroll-behavior: smooth;
+        }
+
+        /* Specific Styles for Sales/Checkout Page */
+        .sales-container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: white;
+            min-height: 100vh;
+            padding-bottom: 80px;
+        }
+
+        .hero-result {
+            background: linear-gradient(135deg, #fce7f3 0%, #fff0f6 100%);
+            padding: 3rem 1.5rem;
+            text-align: center;
+        }
+
+        .result-badge {
+            background: var(--primary);
+            color: white;
+            display: inline-block;
+            padding: 6px 16px;
+            border-radius: 50px;
+            font-size: 0.9rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            text-transform: uppercase;
+        }
+
+        body {
+            background-color: #050a08;
+            color: #f8fafc;
+        }
+
+        .sales-container {
+            background-color: #050a08;
+        }
+
+        .hero-result {
+            background: linear-gradient(135deg, #0a1f14 0%, #050a08 100%);
+            border-bottom: 1px solid rgba(34, 197, 94, 0.2);
+        }
+
+        .headline,
+        .section-title {
+            color: #fff !important;
+        }
+
+        .subheadline {
+            color: #94a3b8 !important;
+        }
+
+        .offer-box {
+            background: rgba(255, 255, 255, 0.04);
+            border: 1px solid rgba(34, 197, 94, 0.3);
+            backdrop-filter: blur(10px);
+            color: #fff;
+        }
+
+        .feature-item,
+        .feature-text p,
+        .user-quote,
+        .guarantee p,
+        .offer-box p {
+            color: #cbd5e1 !important;
+        }
+
+        .feature-text h4 {
+            color: #fff !important;
+        }
+
+        .testimonials-section,
+        .results-section,
+        .app-presentation {
+            background: #050a08;
+            border-bottom: 1px solid rgba(34, 197, 94, 0.1);
+        }
+
+        .testimonial-card,
+        .result-card {
+            background: rgba(255, 255, 255, 0.03) !important;
+            border: 1px solid rgba(255, 255, 255, 0.1) !important;
+            backdrop-filter: blur(10px);
+        }
+
+        .testimonial-card:hover,
+        .result-card:hover {
+            border-color: rgba(34, 197, 94, 0.4) !important;
+            background: rgba(34, 197, 94, 0.05) !important;
+        }
+
+        .user-info h4,
+        .result-info strong {
+            color: #ffffff !important;
+        }
+
+        .user-quote,
+        .result-info p {
+            color: #94a3b8 !important;
+        }
+
+        .feature-icon {
+            background: rgba(34, 197, 94, 0.2);
+            color: #22c55e;
+        }
+
+
+        .headline {
+            font-size: 2rem;
+            font-weight: 800;
+            color: var(--text-dark);
+            line-height: 1.2;
+            margin-bottom: 1rem;
+        }
+
+        .subheadline {
+            font-size: 1.1rem;
+            color: #666;
+            margin-bottom: 2rem;
+            line-height: 1.5;
+        }
+
+        /* Video Placeholder */
+        .vsl-wrapper {
+            width: 100%;
+            aspect-ratio: 16/9;
+            background: #000;
+            border-radius: 16px;
+            overflow: hidden;
+            margin-bottom: 2rem;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+
+
+        /* Offer Section Redesign */
+        .offer-box {
+            background: linear-gradient(145deg, #0a1f14 0%, #050a08 100%);
+            border: 1px solid rgba(34, 197, 94, 0.4);
+            border-radius: 24px;
+            padding: 2.5rem 1.5rem;
+            margin: 3rem 1.5rem;
+            box-shadow: 0 0 50px rgba(34, 197, 94, 0.1);
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .offer-box::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, transparent, #22c55e, transparent);
+        }
+
+        .bundle-image {
+            max-width: 480px;
+            /* Limited width for better aesthetics */
+            width: 100%;
+            height: auto;
+            margin-bottom: 2.5rem;
+            filter: drop-shadow(0 20px 50px rgba(0, 0, 0, 0.6));
+        }
+
+        .price-tag {
+            font-size: 3.5rem;
+            font-weight: 900;
+            color: #22c55e;
+            margin: 1.5rem 0;
+            letter-spacing: -2px;
+            text-shadow: 0 0 20px rgba(34, 197, 94, 0.3);
+        }
+
+        /* Optimization Overlay */
+        #optimization-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: #050a08;
+            z-index: 9999;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+            text-align: center;
+        }
+
+        .opt-spinner {
+            width: 80px;
+            height: 80px;
+            border: 4px solid rgba(34, 197, 94, 0.1);
+            border-top: 4px solid var(--primary);
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+            margin-bottom: 2rem;
+            box-shadow: 0 0 30px rgba(34, 197, 94, 0.2);
+        }
+
+        .opt-text {
+            color: #fff;
+            font-size: 1.4rem;
+            font-weight: 800;
+            margin-bottom: 1rem;
+        }
+
+        .opt-item {
+            color: #94a3b8;
+            font-size: 0.95rem;
+            margin-bottom: 8px;
+            transition: all 0.3s;
+            opacity: 0.5;
+        }
+
+        .opt-item.active {
+            color: var(--primary);
+            opacity: 1;
+            font-weight: 600;
+        }
+
+        .opt-progress-container {
+            width: 100%;
+            max-width: 300px;
+            height: 6px;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 10px;
+            margin: 2rem 0;
+            overflow: hidden;
+        }
+
+        .opt-progress-bar {
+            width: 0%;
+            height: 100%;
+            background: var(--primary);
+            transition: width 0.3s ease;
+            box-shadow: 0 0 15px rgba(34, 197, 94, 0.5);
+        }
+
+        @keyframes spin {
+            0% {
+                transform: rotate(0deg);
+            }
+
+            100% {
+                transform: rotate(360deg);
+            }
+        }
+
+        @keyframes pulse-green {
+            0% {
+                transform: scale(1);
+                text-shadow: 0 0 10px rgba(34, 197, 94, 0.3);
+            }
+
+            50% {
+                transform: scale(1.05);
+                text-shadow: 0 0 25px rgba(34, 197, 94, 0.6);
+            }
+
+            100% {
+                transform: scale(1);
+                text-shadow: 0 0 10px rgba(34, 197, 94, 0.3);
+            }
+        }
+
+        .pulse {
+            display: inline-block;
+            animation: pulse-green 2s infinite ease-in-out;
+        }
+
+        .price-badge {
+            display: inline-block;
+            background: #ef4444;
+            color: #fff;
+            font-size: 0.8rem;
+            padding: 4px 12px;
+            border-radius: 6px;
+            margin-top: 12px;
+            font-weight: 800;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            box-shadow: 0 4px 15px rgba(239, 68, 68, 0.3);
+        }
+
+        .btn-cta {
+            background: linear-gradient(135deg, #22c55e 0%, #16a34a 100%);
+            color: white;
+            width: 100%;
+            padding: 22px;
+            border-radius: 16px;
+            font-size: 1.3rem;
+            font-weight: 800;
+            border: none;
+            cursor: pointer;
+            box-shadow: 0 10px 25px rgba(34, 197, 94, 0.3);
+            transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            text-transform: uppercase;
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+        }
+
+        .btn-cta:hover {
+            transform: translateY(-3px) scale(1.02);
+            box-shadow: 0 15px 35px rgba(34, 197, 94, 0.5);
+        }
+
+        .btn-cta small {
+            display: block;
+            font-size: 0.75rem;
+            font-weight: 600;
+            margin-top: 8px;
+            opacity: 0.9;
+        }
+
+        /* Order Bump Styles */
+        .order-bumps-container {
+            margin: 2rem 0;
+            text-align: left;
+        }
+
+        .order-bump-item {
+            background: rgba(34, 197, 94, 0.05);
+            border: 1px dashed rgba(34, 197, 94, 0.4);
+            border-radius: 12px;
+            padding: 15px;
+            margin-bottom: 12px;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            cursor: pointer;
+            transition: all 0.2s;
+            position: relative;
+        }
+
+        .order-bump-item:hover {
+            background: rgba(34, 197, 94, 0.1);
+            transform: scale(1.01);
+        }
+
+        .order-bump-checkbox {
+            width: 24px;
+            height: 24px;
+            accent-color: var(--primary);
+            cursor: pointer;
+        }
+
+        .order-bump-info h4 {
+            font-size: 0.95rem;
+            color: #fff;
+            margin-bottom: 2px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .order-bump-info p {
+            font-size: 0.8rem;
+            color: #94a3b8 !important;
+            margin: 0;
+        }
+
+        .order-bump-price {
+            margin-left: auto;
+            font-weight: 800;
+            color: #22c55e;
+            font-size: 0.9rem;
+        }
+
+        .bump-badge {
+            position: absolute;
+            top: -10px;
+            right: 15px;
+            background: #d63031;
+            color: white;
+            font-size: 0.65rem;
+            padding: 2px 8px;
+            border-radius: 4px;
+            font-weight: 900;
+            text-transform: uppercase;
+            animation: pulse-red 2s infinite;
+        }
+
+        @keyframes pulse-red {
+            0% {
+                transform: scale(1);
+                box-shadow: 0 0 0 0 rgba(214, 48, 49, 0.7);
+            }
+
+            70% {
+                transform: scale(1.05);
+                box-shadow: 0 0 0 10px rgba(214, 48, 49, 0);
+            }
+
+            100% {
+                transform: scale(1);
+                box-shadow: 0 0 0 0 rgba(214, 48, 49, 0);
+            }
+        }
+
+        /* Features List */
+        .features-list {
+            list-style: none;
+            text-align: left;
+            margin: 2rem 0;
+        }
+
+        .feature-item {
+            display: flex;
+            gap: 12px;
+            margin-bottom: 1rem;
+            font-size: 1rem;
+            color: #444;
+        }
+
+        .feature-item i {
+            color: var(--primary);
+            margin-top: 4px;
+        }
+
+        /* Testimonials */
+        .testimonials-section {
+            padding: 5rem 1.5rem;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 1.7rem;
+            font-weight: 800;
+            margin-bottom: 2.5rem;
+            color: #fff !important;
+            letter-spacing: -0.5px;
+        }
+
+        .user-quote {
+            font-size: 0.95rem;
+            color: #94a3b8;
+            font-style: italic;
+            line-height: 1.6;
+        }
+
+
+        .guarantee {
+            padding: 2rem;
+            text-align: center;
+            font-size: 0.9rem;
+            color: #666;
+        }
+
+        .guarantee img {
+            height: 60px;
+            margin-bottom: 10px;
+        }
+
+        /* Testimonial Carousel - Final Ultra-Stable Styles */
+        .testimonial-carousel {
+            position: relative;
+            overflow: hidden;
+            width: 100%;
+            max-width: 800px;
+            margin: 0 auto;
+            border-radius: 24px;
+            touch-action: pan-y;
+        }
+
+        .carousel-track {
+            display: flex;
+            transition: transform 0.6s cubic-bezier(0.645, 0.045, 0.355, 1);
+            will-change: transform;
+            cursor: grab;
+        }
+
+        .carousel-track:active {
+            cursor: grabbing;
+        }
+
+        /* Navigation Arrows */
+        .carousel-nav {
+            position: absolute;
+            top: 50%;
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            transform: translateY(-50%);
+            padding: 0 10px;
+            pointer-events: none;
+            z-index: 10;
+        }
+
+        .nav-btn {
+            width: 40px;
+            height: 40px;
+            background: rgba(34, 197, 94, 0.2);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(34, 197, 94, 0.4);
+            border-radius: 50%;
+            color: #22c55e;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            pointer-events: auto;
+            transition: all 0.3s;
+            opacity: 0.7;
+        }
+
+        .nav-btn:hover {
+            opacity: 1;
+            background: rgba(34, 197, 94, 0.4);
+        }
+
+        @media (max-width: 768px) {
+            .carousel-nav {
+                display: none;
+                /* Hide arrows on mobile, use swipe */
+            }
+        }
+
+        .carousel-dots {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            margin-top: 20px;
+        }
+
+        .dot {
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.2);
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+
+        .dot.active {
+            background: #22c55e;
+            transform: scale(1.2);
+        }
+
+        .testimonial-card {
+            width: 100%;
+            /* Default for desktop or base centering */
+            flex-shrink: 0;
+            padding: 2.5rem;
+            display: flex;
+            gap: 20px;
+            background: rgba(255, 255, 255, 0.035);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            box-sizing: border-box;
+            margin: 0;
+            border-radius: 20px;
+        }
+
+        .user-avatar {
+            width: 65px;
+            height: 65px;
+            border-radius: 50%;
+            border: 2px solid var(--primary);
+            object-fit: cover;
+            flex-shrink: 0;
+            box-shadow: 0 0 15px rgba(34, 197, 94, 0.3);
+        }
+
+        .user-info {
+            flex: 1;
+            text-align: left;
+        }
+
+        .user-info h4 {
+            font-size: 1.15rem;
+            font-weight: 700;
+            color: #fff;
+            margin-bottom: 5px;
+        }
+
+        .stars {
+            color: #f59e0b;
+            font-size: 0.9rem;
+            margin-bottom: 12px;
+        }
+
+        .user-quote {
+            font-size: 1rem;
+            color: #cbd5e1;
+            font-style: italic;
+            line-height: 1.6;
+            margin: 0;
+        }
+
+        /* Results Section Styles */
+        .results-section {
+            padding: 5rem 1.5rem;
+        }
+
+        .results-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 1.5rem;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        @media (min-width: 640px) {
+            .results-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        .result-card {
+            border-radius: 24px;
+            overflow: hidden;
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            position: relative;
+        }
+
+        .result-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 25px rgba(192, 38, 211, 0.15);
+        }
+
+        .result-label {
+            position: absolute;
+            top: 15px;
+            left: 15px;
+            background: var(--primary);
+            color: white;
+            padding: 6px 12px;
+            border-radius: 20px;
+            font-size: 0.75rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            z-index: 2;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        .result-image {
+            width: 100%;
+            height: 280px;
+            object-fit: cover;
+            display: block;
+        }
+
+        .result-info {
+            padding: 1rem;
+            text-align: center;
+        }
+
+        .result-info p {
+            margin: 0;
+            color: #333;
+        }
+
+        .result-info strong {
+            font-size: 1rem;
+            color: #000;
+        }
+
+        /* App Presentation Section */
+        .app-presentation {
+            background: linear-gradient(180deg, #050a08 0%, #0a1f14 100%);
+            padding: 5rem 1.5rem;
+            text-align: center;
+            overflow: hidden;
+            border-top: 1px solid rgba(34, 197, 94, 0.2);
+            border-bottom: 1px solid rgba(34, 197, 94, 0.2);
+        }
+
+        .app-content {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 3rem;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        @media (min-width: 768px) {
+            .app-content {
+                flex-direction: row;
+                text-align: left;
+                align-items: center;
+            }
+
+            .app-mockup {
+                flex: 1;
+            }
+
+            .app-features {
+                flex: 1;
+            }
+        }
+
+        .app-mockup img {
+            max-width: 550px;
+            /* Increased to better match features height */
+            width: 100%;
+            height: auto;
+            filter: drop-shadow(0 0 50px rgba(34, 197, 94, 0.45));
+            animation: float 8s ease-in-out infinite;
+            border-radius: 40px;
+        }
+
+        @keyframes float {
+            0% {
+                transform: translateY(0px) rotate(0deg);
+            }
+
+            50% {
+                transform: translateY(-15px) rotate(1deg);
+            }
+
+            100% {
+                transform: translateY(0px) rotate(0deg);
+            }
+        }
+
+        .feature-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .app-feature-item {
+            display: flex;
+            gap: 20px;
+            align-items: flex-start;
+            background: rgba(255, 255, 255, 0.03);
+            padding: 20px;
+            border-radius: 16px;
+            border: 1px solid rgba(34, 197, 94, 0.1);
+            transition: all 0.3s ease;
+        }
+
+        .app-feature-item:hover {
+            background: rgba(34, 197, 94, 0.05);
+            border-color: rgba(34, 197, 94, 0.3);
+            transform: translateX(10px);
+        }
+
+        .feature-icon {
+            background: rgba(34, 197, 94, 0.2);
+            color: #22c55e;
+            width: 50px;
+            height: 50px;
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+            font-size: 1.5rem;
+            box-shadow: 0 0 15px rgba(34, 197, 94, 0.2);
+        }
+
+        .feature-text h4 {
+            font-size: 1.2rem;
+            font-weight: 800;
+            margin-bottom: 8px;
+            color: #ffffff;
+            letter-spacing: -0.5px;
+        }
+
+        .feature-text p {
+            font-size: 0.95rem;
+            color: #94a3b8;
+            line-height: 1.5;
+        }
+
+        /* Conversion Optimization Styles */
+        .timer-bar {
+            background: #d63031;
+            color: white;
+            text-align: center;
+            padding: 8px;
+            font-size: 0.9rem;
+            font-weight: 700;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+        }
+
+        .diagnostic-card {
+            background: rgba(34, 197, 94, 0.1);
+            border: 1px solid rgba(34, 197, 94, 0.3);
+            border-radius: 20px;
+            padding: 1.5rem;
+            margin: 1.5rem 0;
+            text-align: left;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .diagnostic-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 1rem;
+        }
+
+        .diagnostic-tag {
+            background: #22c55e;
+            color: white;
+            padding: 4px 10px;
+            border-radius: 5px;
+            font-size: 0.7rem;
+            font-weight: 800;
+            text-transform: uppercase;
+        }
+
+        .diagnostic-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 10px;
+        }
+
+        .diag-item {
+            background: rgba(255, 255, 255, 0.05);
+            padding: 10px;
+            border-radius: 10px;
+            font-size: 0.85rem;
+        }
+
+        .diag-item strong {
+            display: block;
+            color: #22c55e;
+            font-size: 0.75rem;
+            text-transform: uppercase;
+        }
+
+        /* Enhanced Diagnostic Styles */
+        .diagnostic-title {
+            text-align: center;
+            margin-bottom: 1.5rem;
+        }
+
+        .diagnostic-title h2 {
+            font-size: 1.8rem;
+            font-weight: 800;
+            color: #fff;
+            margin-bottom: 0.5rem;
+        }
+
+        .diagnostic-title .highlight {
+            color: #ef4444;
+            text-transform: uppercase;
+        }
+
+        .diagnostic-subtitle {
+            color: #94a3b8;
+            font-size: 0.95rem;
+            line-height: 1.6;
+        }
+
+        .diagnostic-subtitle .highlight-green {
+            color: #22c55e;
+            font-weight: 700;
+        }
+
+        .status-comparison {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 15px;
+            margin: 2rem 0;
+        }
+
+        .status-box {
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 16px;
+            padding: 1.5rem;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .status-box.current {
+            border-color: rgba(239, 68, 68, 0.5);
+        }
+
+        .status-box.goal {
+            border-color: rgba(34, 197, 94, 0.5);
+            position: relative;
+        }
+
+        .status-box.goal::before {
+            content: "META";
+            position: absolute;
+            top: 10px;
+            right: -25px;
+            background: #22c55e;
+            color: white;
+            padding: 2px 30px;
+            font-size: 0.65rem;
+            font-weight: 800;
+            transform: rotate(45deg);
+        }
+
+        .status-label {
+            font-size: 0.75rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            color: #94a3b8;
+            margin-bottom: 1rem;
+        }
+
+        .status-icon {
+            font-size: 3rem;
+            margin: 1rem 0;
+        }
+
+        .status-icon.slow {
+            color: #ef4444;
+        }
+
+        .status-icon.fast {
+            color: #22c55e;
+        }
+
+        .efficiency-bar {
+            width: 100%;
+            height: 6px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 10px;
+            margin: 1rem 0 0.5rem;
+            overflow: hidden;
+        }
+
+        .efficiency-fill {
+            height: 100%;
+            border-radius: 10px;
+            transition: width 1s ease;
+        }
+
+        .efficiency-fill.low {
+            background: #ef4444;
+            width: 24%;
+        }
+
+        .efficiency-fill.high {
+            background: #22c55e;
+            width: 95%;
+        }
+
+        .efficiency-text {
+            font-size: 0.8rem;
+            color: #cbd5e1;
+            text-align: right;
+        }
+
+        .status-text {
+            font-size: 1rem;
+            font-weight: 700;
+            margin-top: 0.5rem;
+        }
+
+        .status-text.negative {
+            color: #ef4444;
+        }
+
+        .status-text.positive {
+            color: #22c55e;
+        }
+
+        @media (max-width: 640px) {
+            .status-comparison {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .trust-seals {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin-top: 1.5rem;
+            opacity: 0.7;
+            flex-wrap: wrap;
+        }
+
+        .seal-item {
+            font-size: 0.75rem;
+            display: flex;
+            align-items: center;
+            gap: 5px;
+            color: #94a3b8;
+        }
+
+        .faq-section {
+            padding: 4rem 1.5rem;
+            background: #050a08;
+        }
+
+        .faq-container {
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        .faq-item {
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 12px;
+            margin-bottom: 10px;
+            overflow: hidden;
+        }
+
+        .faq-question {
+            padding: 15px 20px;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-weight: 700;
+            transition: all 0.3s;
+        }
+
+        .faq-question:hover {
+            background: rgba(34, 197, 94, 0.05);
+        }
+
+        .faq-answer {
+            padding: 0 20px;
+            max-height: 0;
+            overflow: hidden;
+            transition: all 0.3s;
+            color: #94a3b8;
+            font-size: 0.9rem;
+            line-height: 1.6;
+        }
+
+        .faq-item.active .faq-answer {
+            padding: 15px 20px;
+            max-height: 200px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .faq-item.active i {
+            transform: rotate(180deg);
+        }
+
+        /* Final Responsive Stability Fix - V3 */
+        @media (max-width: 768px) {
+
+            html,
+            body {
+                width: 100% !important;
+                overflow-x: hidden !important;
+                position: relative;
+                margin: 0;
+                padding: 0;
+            }
+
+            .sales-container {
+                width: 100% !important;
+                max-width: 100% !important;
+                overflow-x: hidden !important;
+                padding-bottom: 100px;
+                /* Space for fixed footer */
+                margin: 0;
+            }
+
+            .hero-result {
+                padding: 2rem 1rem;
+                width: 100%;
+                box-sizing: border-box;
+            }
+
+            .headline {
+                font-size: 1.45rem !important;
+                /* Slightly smaller to prevent any overflow */
+                line-height: 1.25;
+                font-weight: 800;
+                word-wrap: break-word;
+                padding: 0 5px;
+                text-align: center;
+            }
+
+            .subheadline {
+                font-size: 0.95rem;
+                padding: 0 10px;
+                text-align: center;
+                line-height: 1.5;
+            }
+
+
+
+            .offer-box {
+                margin: 2rem 0.75rem;
+                padding: 1.8rem 1rem;
+                width: auto;
+                /* Let it be natural within margins */
+            }
+
+            .bundle-image {
+                max-width: 100%;
+                margin-bottom: 1.5rem;
+            }
+
+            .price-tag {
+                font-size: 2.4rem;
+                letter-spacing: -1px;
+            }
+
+            .btn-cta {
+                padding: 18px 10px;
+                font-size: 1.1rem;
+            }
+
+            .testimonial-card {
+                padding: 1.5rem 1rem;
+                flex-direction: column;
+                text-align: center;
+                gap: 12px;
+            }
+
+            .user-avatar {
+                width: 50px;
+                height: 50px;
+                margin: 0 auto;
+            }
+
+            .user-info h4 {
+                font-size: 1rem;
+            }
+
+            .user-quote {
+                font-size: 0.85rem;
+                line-height: 1.4;
+            }
+
+            .section-title {
+                font-size: 1.5rem;
+                padding: 0 10px;
+            }
+
+            .app-mockup img {
+                max-width: 100%;
+                border-radius: 20px;
+            }
+
+            .app-presentation {
+                padding: 3rem 1rem;
+            }
+        }
+
+        /* Essential Global Reset */
+        * {
+            box-sizing: border-box !important;
+        }
+
+        html,
+        body {
+            max-width: 100%;
+            overflow-x: hidden;
+            background-color: #050a08;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Optimization Overlay (Interstitial) -->
+    <div id="optimization-overlay">
+        <div class="opt-spinner"></div>
+        <div class="opt-text">Otimizando seu Protocolo...</div>
+        <div class="opt-progress-container">
+            <div class="opt-progress-bar" id="opt-bar"></div>
+        </div>
+        <div id="opt-steps">
+            <div class="opt-item active" id="opt-1">Sincronizando respostas do quiz...</div>
+            <div class="opt-item" id="opt-2">Calculando Índice de Gordura Visceral...</div>
+            <div class="opt-item" id="opt-3">Ajustando cronograma de treinos de 15 min...</div>
+            <div class="opt-item" id="opt-4">Liberando bônus exclusivos...</div>
+        </div>
+    </div>
+
+    <div class="timer-bar" id="top-timer">
+        Sua oferta especial expira em: <span id="timer-display">15:00</span>
+    </div>
+
+    <div class="sales-container">
+        <!-- Hero Result -->
+        <div class="hero-result">
+            <div class="result-badge"><i class="fas fa-check-circle"></i> Análise Concluída</div>
+            <h1 class="headline">Seu Plano <span style="color: var(--primary);">Barriga Zero</span> está pronto!
+            </h1>
+
+            <!-- Professional Diagnostic Section -->
+            <div class="diagnostic-card">
+                <div class="diagnostic-title">
+                    <h2>DIAGNÓSTICO: <span class="highlight">BLOQUEIO METABÓLICO DETECTADO.</span></h2>
+                    <p class="diagnostic-subtitle">
+                        Com base nas variações do seu perfil hormonal e taxa metabólica basal, identificamos um platô de
+                        armazenamento. O seu protocolo foi recalibrado para priorizar a queima de gordura visceral e
+                        localizada em: <span class="highlight-green" id="diag-zone-text">Barriga e Cintura.</span>
+                    </p>
+                </div>
+
+                <div class="diagnostic-header">
+                    <span class="diagnostic-tag">DIAGNÓSTICO PERSONALIZADO</span>
+                    <i class="fas fa-microchip" style="color: #22c55e;"></i>
+                </div>
+
+                <!-- Detailed Analysis Grid -->
+                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 15px; margin: 2rem 0;">
+                    <!-- Bioimpedância -->
+                    <div
+                        style="background: rgba(255,255,255,0.03); padding: 1.5rem; border-radius: 12px; border: 1px solid rgba(255,255,255,0.1);">
+                        <div style="display: flex; align-items: center; gap: 10px; margin-bottom: 1rem;">
+                            <i class="fas fa-microscope" style="color: #22c55e; font-size: 1.5rem;"></i>
+                            <h4
+                                style="margin: 0; font-size: 0.9rem; color: #94a3b8; text-transform: uppercase; font-weight: 700;">
+                                Bioimpedância</h4>
+                        </div>
+                        <div style="font-size: 1.1rem; font-weight: 700; color: #fff; margin-bottom: 0.5rem;">Relatório
+                            Concluído</div>
+                        <div style="font-size: 0.85rem; color: #cbd5e1;" id="diag-metabolic-type">Taxa de Oxidação:
+                            Baixa</div>
+                        <div style="font-size: 0.85rem; color: #cbd5e1;" id="diag-metabolic-basal">Fase Metabólica:
+                            Platô</div>
+                    </div>
+
+                    <!-- Status Metabólico -->
+                    <div
+                        style="background: rgba(255,255,255,0.03); padding: 1.5rem; border-radius: 12px; border: 1px solid rgba(239,68,68,0.3);">
+                        <div style="display: flex; align-items: center; gap: 10px; margin-bottom: 1rem;">
+                            <i class="fas fa-bolt" style="color: #ef4444; font-size: 1.5rem;"></i>
+                            <h4
+                                style="margin: 0; font-size: 0.9rem; color: #94a3b8; text-transform: uppercase; font-weight: 700;">
+                                Eficiência Energética</h4>
+                        </div>
+                        <div style="font-size: 1.1rem; font-weight: 700; color: #ef4444; margin-bottom: 0.5rem;"
+                            id="diag-metabolic-status">
+                            Bloqueio Detectado</div>
+                        <div style="font-size: 0.85rem; color: #cbd5e1;" id="diag-basal-rate">Taxa Basal: Reduzida</div>
+                        <div style="font-size: 0.85rem; color: #cbd5e1;" id="diag-efficiency">Eficiência: 24% do ideal
+                        </div>
+                    </div>
+
+                    <!-- Foco Principal -->
+                    <div
+                        style="background: rgba(255,255,255,0.03); padding: 1.5rem; border-radius: 12px; border: 1px solid rgba(255,255,255,0.1);">
+                        <div style="display: flex; align-items: center; gap: 10px; margin-bottom: 1rem;">
+                            <i class="fas fa-bullseye" style="color: #22c55e; font-size: 1.5rem;"></i>
+                            <h4
+                                style="margin: 0; font-size: 0.9rem; color: #94a3b8; text-transform: uppercase; font-weight: 700;">
+                                Foco Localizado</h4>
+                        </div>
+                        <div style="font-size: 1.1rem; font-weight: 700; color: #fff; margin-bottom: 0.5rem;"
+                            id="diag-zone">Barriga e Cintura</div>
+                        <div style="font-size: 0.85rem; color: #cbd5e1;" id="diag-visceral-fat">Índice Visceral: Nível 4
+                        </div>
+                        <div style="font-size: 0.85rem; color: #cbd5e1;" id="diag-water-retention">Status Inflamatório:
+                            Moderado</div>
+                    </div>
+
+                    <!-- Potencial de Resultado -->
+                    <div
+                        style="background: linear-gradient(135deg, rgba(34,197,94,0.1) 0%, rgba(34,197,94,0.05) 100%); padding: 1.5rem; border-radius: 12px; border: 1px solid rgba(34,197,94,0.4);">
+                        <div style="display: flex; align-items: center; gap: 10px; margin-bottom: 1rem;">
+                            <i class="fas fa-chart-line" style="color: #22c55e; font-size: 1.5rem;"></i>
+                            <h4
+                                style="margin: 0; font-size: 0.9rem; color: #94a3b8; text-transform: uppercase; font-weight: 700;">
+                                Potencial 21 Dias</h4>
+                        </div>
+                        <div style="font-size: 1.3rem; font-weight: 800; color: #22c55e; margin-bottom: 0.5rem;">ALTO
+                            (8-12kg)</div>
+                        <div style="font-size: 0.85rem; color: #cbd5e1;">Redução Cintura: 5-8cm</div>
+                        <div style="font-size: 0.85rem; color: #cbd5e1;">Definição: +70%</div>
+                    </div>
+                </div>
+
+                <!-- Protocolo Personalizado -->
+                <div
+                    style="background: rgba(34,197,94,0.05); border: 1px solid rgba(34,197,94,0.2); border-radius: 12px; padding: 1.5rem; margin-top: 1.5rem;">
+                    <div style="display: flex; align-items: center; gap: 10px; margin-bottom: 1rem;">
+                        <i class="fas fa-dna" style="color: #22c55e; font-size: 1.2rem;"></i>
+                        <h4 style="margin: 0; font-size: 0.95rem; color: #fff; font-weight: 700;">Protocolo Gerado
+                            Especificamente Para Você:</h4>
+                    </div>
+                    <div
+                        style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 10px; font-size: 0.85rem; color: #cbd5e1;">
+                        <div style="display: flex; align-items: center; gap: 8px;">
+                            <i class="fas fa-check-circle" style="color: #22c55e;"></i>
+                            <span>Treinos 15min/dia adaptados</span>
+                        </div>
+                        <div style="display: flex; align-items: center; gap: 8px;">
+                            <i class="fas fa-check-circle" style="color: #22c55e;"></i>
+                            <span>Cardápio anti-inflamatório</span>
+                        </div>
+                        <div style="display: flex; align-items: center; gap: 8px;">
+                            <i class="fas fa-check-circle" style="color: #22c55e;"></i>
+                            <span>Jejum intermitente ajustado</span>
+                        </div>
+                        <div style="display: flex; align-items: center; gap: 8px;">
+                            <i class="fas fa-check-circle" style="color: #22c55e;"></i>
+                            <span>Suplementação recomendada</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div
+                    style="margin-top: 15px; font-size: 0.75rem; color: #94a3b8; display: flex; align-items: center; gap: 8px;">
+                    <i class="fas fa-sync-alt fa-spin"></i> Sincronizado com suas respostas do Quiz
+                </div>
+            </div>
+
+
+        </div>
+
+        <!-- Inside the App Section -->
+        <div class="app-presentation">
+            <h3 class="section-title" style="font-size: 2.2rem; margin-bottom: 3rem;">Por dentro da <span
+                    style="color: var(--primary);">Plataforma</span></h3>
+            <div class="app-content">
+                <div class="app-mockup">
+                    <img src="./images/app_mockup_v5.png" alt="App Dashboard Mockup">
+                </div>
+                <div class="app-features">
+                    <div class="feature-grid">
+                        <div class="app-feature-item">
+                            <div class="feature-icon"><i class="fas fa-dumbbell"></i></div>
+                            <div class="feature-text">
+                                <h4>Treinos Inteligentes</h4>
+                                <p>Rotinas focadas em queima rápida de gordura e definição abdominal em casa.</p>
+                            </div>
+                        </div>
+                        <div class="app-feature-item">
+                            <div class="feature-icon"><i class="fas fa-utensils"></i></div>
+                            <div class="feature-text">
+                                <h4>Cardápio Automático</h4>
+                                <p>Receitas deliciosas que se ajustam ao seu gosto e aceleram seu metabolismo.</p>
+                            </div>
+                        </div>
+                        <div class="app-feature-item">
+                            <div class="feature-icon"><i class="fas fa-tint"></i></div>
+                            <div class="feature-text">
+                                <h4>Controle Metabólico</h4>
+                                <p>Monitore sua hidratação e veja seu corpo desinchar dia após dia.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- Results Section -->
+        <div style="background: linear-gradient(180deg, #050a08 0%, #0a1410 100%); padding: 4rem 1rem; margin: 3rem 0;">
+            <div style="max-width: 1000px; margin: 0 auto;">
+                <h3 style="font-size: 1.8rem; font-weight: 800; text-align: center; color: #fff; margin-bottom: 1rem;">
+                    Veja as transformações de <span style="color: #22c55e;">Mulheres Reais</span>
+                </h3>
+                <p style="text-align: center; color: #94a3b8; margin-bottom: 3rem; font-size: 0.95rem;">
+                    Resultados comprovados seguindo o Protocolo Barriga Zero
+                </p>
+
+                <!-- Results Grid -->
+                <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 20px; margin-bottom: 2rem;">
+                    <!-- Result 1 -->
+                    <div
+                        style="background: rgba(255,255,255,0.03); border-radius: 16px; overflow: hidden; border: 1px solid rgba(255,255,255,0.1);">
+                        <div style="position: relative; height: 350px; overflow: hidden;">
+                            <img src="./images/results/final_1.jpg" alt="Transformação Paula"
+                                style="width: 100%; height: 100%; object-fit: cover; display: block;">
+                            <div
+                                style="position: absolute; top: 12px; left: 12px; background: #22c55e; color: #000; padding: 5px 10px; border-radius: 4px; font-size: 0.65rem; font-weight: 800; text-transform: uppercase; z-index: 10;">
+                                Transformação em 3 Semanas
+                            </div>
+                        </div>
+                        <div style="padding: 1.25rem; text-align: center;">
+                            <h4 style="font-size: 1.1rem; font-weight: 700; color: #fff; margin-bottom: 0.5rem;">Paula,
+                                32 anos</h4>
+                            <p style="font-size: 0.85rem; color: #cbd5e1; margin: 0;">Perdeu 12kg e definiu a barriga em
+                                casa</p>
+                        </div>
+                    </div>
+
+                    <!-- Result 2 -->
+                    <div
+                        style="background: rgba(255,255,255,0.03); border-radius: 16px; overflow: hidden; border: 1px solid rgba(255,255,255,0.1);">
+                        <div style="position: relative; height: 350px; overflow: hidden;">
+                            <img src="./images/results/final_2.jpg" alt="Transformação Juliana"
+                                style="width: 100%; height: 100%; object-fit: cover; display: block;">
+                            <div
+                                style="position: absolute; top: 12px; left: 12px; background: #22c55e; color: #000; padding: 5px 10px; border-radius: 4px; font-size: 0.65rem; font-weight: 800; text-transform: uppercase; z-index: 10;">
+                                Transformação em 21 Dias
+                            </div>
+                        </div>
+                        <div style="padding: 1.25rem; text-align: center;">
+                            <h4 style="font-size: 1.1rem; font-weight: 700; color: #fff; margin-bottom: 0.5rem;">
+                                Juliana, 35 anos</h4>
+                            <p style="font-size: 0.85rem; color: #cbd5e1; margin: 0;">Ganhou massa muscular e definição
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Result 3 -->
+                    <div
+                        style="background: rgba(255,255,255,0.03); border-radius: 16px; overflow: hidden; border: 1px solid rgba(255,255,255,0.1);">
+                        <div style="position: relative; height: 350px; overflow: hidden;">
+                            <img src="./images/results/final_3.jpg" alt="Transformação Mariana"
+                                style="width: 100%; height: 100%; object-fit: cover; display: block;">
+                            <div
+                                style="position: absolute; top: 12px; left: 12px; background: #22c55e; color: #000; padding: 5px 10px; border-radius: 4px; font-size: 0.65rem; font-weight: 800; text-transform: uppercase; z-index: 10;">
+                                Transformação em 3 Semanas
+                            </div>
+                        </div>
+                        <div style="padding: 1.25rem; text-align: center;">
+                            <h4 style="font-size: 1.1rem; font-weight: 700; color: #fff; margin-bottom: 0.5rem;">
+                                Mariana, 28 anos</h4>
+                            <p style="font-size: 0.85rem; color: #cbd5e1; margin: 0;">Reduziu medidas e ganhou força</p>
+                        </div>
+                    </div>
+
+                    <!-- Result 4 -->
+                    <div
+                        style="background: rgba(255,255,255,0.03); border-radius: 16px; overflow: hidden; border: 1px solid rgba(255,255,255,0.1);">
+                        <div style="position: relative; height: 350px; overflow: hidden;">
+                            <img src="./images/results/final_4.jpg" alt="Transformação Fernanda"
+                                style="width: 100%; height: 100%; object-fit: cover; display: block;">
+                            <div
+                                style="position: absolute; top: 12px; left: 12px; background: #22c55e; color: #000; padding: 5px 10px; border-radius: 4px; font-size: 0.65rem; font-weight: 800; text-transform: uppercase; z-index: 10;">
+                                Transformação em 21 Dias
+                            </div>
+                        </div>
+                        <div style="padding: 1.25rem; text-align: center;">
+                            <h4 style="font-size: 1.1rem; font-weight: 700; color: #fff; margin-bottom: 0.5rem;">
+                                Fernanda, 41 anos</h4>
+                            <p style="font-size: 0.85rem; color: #cbd5e1; margin: 0;">Definiu glúteos e pernas</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- CTA Button -->
+                <div style="text-align: center; margin-top: 2.5rem;">
+                    <a href="#offer"
+                        style="display: inline-block; background: #22c55e; color: #000; font-size: 1.1rem; font-weight: 800; padding: 18px 40px; border-radius: 50px; text-decoration: none; text-transform: uppercase; box-shadow: 0 10px 30px rgba(34,197,94,0.3); transition: all 0.3s ease;">
+                        Começar Agora
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <!-- The Product / Offer -->
+        <div class="offer-box" id="offer">
+            <img src="./images/app_mockup_v4.png" alt="Barriga Zero App" class="bundle-image">
+            <h2 style="font-size: 2.2rem; font-weight: 900; margin-bottom: 15px; color: #fff; letter-spacing: -1px;">
+                Protocolo <span style="color: #22c55e;">Barriga Zero</span></h2>
+            <p style="font-size: 1.1rem; margin-bottom: 2rem; color: #94a3b8;">Acesso imediato ao método completo +
+                2
+                Bônus Exclusivos.
+            </p>
+
+            <ul class="features-list" style="text-align: left; padding: 0 10px;">
+                <li class="feature-item"
+                    style="display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid rgba(255,255,255,0.05); padding: 12px 0;">
+                    <span><i class="fas fa-check-circle" style="color: #22c55e; margin-right: 10px;"></i><strong>App
+                            Barriga Zero:</strong> (Todos os treinos)</span>
+                    <span style="color: #94a3b8; font-size: 0.8rem; text-decoration: line-through;">R$ 147</span>
+                </li>
+                <li class="feature-item"
+                    style="display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid rgba(255,255,255,0.05); padding: 12px 0;">
+                    <span><i class="fas fa-check-circle" style="color: #22c55e; margin-right: 10px;"></i><strong>BÔNUS
+                            1:</strong> Protocolo de Treinos em Casa</span>
+                    <span style="color: #94a3b8; font-size: 0.8rem; text-decoration: line-through;">R$ 97</span>
+                </li>
+                <li class="feature-item"
+                    style="display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid rgba(255,255,255,0.05); padding: 12px 0;">
+                    <span><i class="fas fa-check-circle" style="color: #22c55e; margin-right: 10px;"></i><strong>BÔNUS
+                            2:</strong> Detox 7 Dias (Perca até 3kg)</span>
+                    <span style="color: #94a3b8; font-size: 0.8rem; text-decoration: line-through;">R$ 67</span>
+                </li>
+                <li class="feature-item"
+                    style="display: flex; justify-content: space-between; align-items: center; padding: 12px 0;">
+                    <span><i class="fas fa-check-circle" style="color: #22c55e; margin-right: 10px;"></i>Acesso
+                        Vitalício + Atualizações</span>
+                    <span style="color: #22c55e; font-weight: 700; font-size: 0.8rem;">GRÁTIS</span>
+                </li>
+            </ul>
+
+            <!-- Order Bumps Removed as requested -->
+
+            <div class="price-tag">
+                <div style="font-size: 1.1rem; color: #94a3b8; margin-bottom: 0.5rem; font-weight: 500;">
+                    De <span style="text-decoration: line-through;">R$ 197,00</span> por apenas:
+                </div>
+                <div class="pulse">R$ 27,90</div>
+                <div style="font-size: 1rem; color: #cbd5e1; margin-top: 5px; font-weight: 500; opacity: 0.9;">
+                    (Apenas R$ 0,93 por dia)
+                </div>
+                <div class="price-badge">
+                    85% DE DESCONTO LIBERADO
+                </div>
+            </div>
+
+            <a href="https://pay.kirvano.com/8aed29af-b5d0-42fc-88e0-aba18c6cb6d8" class="btn-cta"
+                style="background: linear-gradient(135deg, #22c55e 0%, #16a34a 100%);">
+                QUERO MINHA BARRIGA ZERO AGORA!
+                <small><i class="fas fa-bolt"></i> Oferta expira em <span id="timer">14:59</span></small>
+            </a>
+
+            <!-- Trust Seals -->
+            <div class="trust-seals">
+                <div class="seal-item"><i class="fas fa-lock"></i> SSL Criptografado</div>
+                <div class="seal-item"><i class="fas fa-check-shield"></i> Satisfação 100%</div>
+                <div class="seal-item"><i class="fas fa-credit-card"></i> Pagamento Seguro</div>
+            </div>
+        </div>
+
+        <!-- Testimonials -->
+        <div class="testimonials-section">
+            <h3 class="section-title" style="color: #ffffff;">Quem fez, aprovou!</h3>
+
+            <div class="testimonial-carousel">
+                <div class="carousel-nav">
+                    <button class="nav-btn prev" onclick="prevSlide()"><i class="fas fa-chevron-left"></i></button>
+                    <button class="nav-btn next" onclick="nextSlide()"><i class="fas fa-chevron-right"></i></button>
+                </div>
+                <div class="carousel-track">
+                    <!-- Testimonial 1 -->
+                    <div class="testimonial-card">
+                        <img src="./images/testimonials/test_1.jpg" class="user-avatar" alt="Fernanda">
+                        <div class="user-info">
+                            <h4>Fernanda S.</h4>
+                            <div class="stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i
+                                    class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                            </div>
+                            <p class="user-quote">"Eu achava que treinar em casa era sem graça, mas esse método
+                                mudou meu corpo em 3 semanas. Minha cintura afinou muito!"</p>
+                        </div>
+                    </div>
+
+                    <!-- Testimonial 2 -->
+                    <div class="testimonial-card">
+                        <img src="./images/testimonials/test_2.jpg" class="user-avatar" alt="Juliana">
+                        <div class="user-info">
+                            <h4>Juliana M.</h4>
+                            <div class="stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i
+                                    class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                            </div>
+                            <p class="user-quote">"O melhor é não precisar ir pra academia. Faço na sala de casa
+                                enquanto meu bebê dorme. Amei!"</p>
+                        </div>
+                    </div>
+
+                    <!-- Testimonial 3 -->
+                    <div class="testimonial-card">
+                        <img src="./images/testimonials/test_3.jpg" class="user-avatar" alt="Carla">
+                        <div class="user-info">
+                            <h4>Carla D.</h4>
+                            <div class="stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i
+                                    class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                            </div>
+                            <p class="user-quote">"Já tinha tentado de tudo, mas esse foco em glúteos e barriga foi
+                                o que realmente funcionou pra mim."</p>
+                        </div>
+                    </div>
+
+                    <!-- Testimonial 4 -->
+                    <div class="testimonial-card">
+                        <img src="./images/testimonials/test_4.jpg" class="user-avatar" alt="Paula">
+                        <div class="user-info">
+                            <h4>Paula R.</h4>
+                            <div class="stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i
+                                    class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                            </div>
+                            <p class="user-quote">"Fiz por 6 semanas e perdi 8kg! O foco em glúteos deixou meu corpo
+                                muito mais harmônico."</p>
+                        </div>
+                    </div>
+
+                    <!-- Testimonial 5 -->
+                    <div class="testimonial-card">
+                        <img src="./images/avatar_1.png" class="user-avatar" alt="Amanda">
+                        <div class="user-info">
+                            <h4>Amanda L.</h4>
+                            <div class="stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i
+                                    class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                            </div>
+                            <p class="user-quote">"Nunca tinha conseguido definir a barriga, mas com os treinos
+                                rápidos
+                                de 15min fez toda diferença!"</p>
+                        </div>
+                    </div>
+
+                    <!-- Testimonial 6 -->
+                    <div class="testimonial-card">
+                        <img src="./images/avatar_2.png" class="user-avatar" alt="Beatriz">
+                        <div class="user-info">
+                            <h4>Beatriz C.</h4>
+                            <div class="stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i
+                                    class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                            </div>
+                            <p class="user-quote">"Estava desanimada com as academias lotadas. Esse método me
+                                devolveu a
+                                motivação!"</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="carousel-dots" id="carousel-dots"></div>
+            </div>
+        </div>
+
+        <!-- FAQ Section -->
+        <div class="faq-section">
+            <h3 class="section-title">Perguntas Frequentes</h3>
+            <div class="faq-container">
+                <div class="faq-item">
+                    <div class="faq-question">Como vou receber o acesso? <i class="fas fa-chevron-down"></i></div>
+                    <div class="faq-answer">Imediatamente após a confirmação do pagamento, você receberá os dados
+                        de
+                        acesso no seu e-mail cadastrado. Se pagar via PIX ou Cartão, o envio é instantâneo.</div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">Preciso de equipamentos de academia? <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">Não! O Protocolo Barriga Zero foi desenhado para ser feito 100% em casa,
+                        usando apenas o peso do seu próprio corpo.</div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">Por quanto tempo terei acesso? <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">Seu acesso é vitalício. Você poderá ver e rever as aulas quantas vezes
+                        quiser, sem cobranças mensais.</div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">Funciona para quem nunca treinou? <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">Sim! Os treinos são progressivos, com níveis que vão do iniciante ao
+                        avançado. Explicamos cada movimento detalhadamente.</div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">Tenho garantia? <i class="fas fa-chevron-down"></i></div>
+                    <div class="faq-answer">Sim, você tem 7 dias de garantia incondicional. Se não gostar do método
+                        por
+                        qualquer motivo, devolvemos 100% do seu dinheiro.</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Guarantee -->
+        <div class="guarantee">
+            <div style="font-size: 3rem; color: #22c55e; margin-bottom: 10px;"><i class="fas fa-shield-alt"></i>
+            </div>
+            <h3 style="font-weight: 700; margin-bottom: 10px; color: #ffffff;">Risco Zero</h3>
+            <p style="color: #94a3b8;">Você tem 7 dias para testar. Se não gostar dos resultados, devolvemos 100% do
+                seu
+                dinheiro. Sem
+                perguntas.</p>
+        </div>
+
+        <!-- Footer sticky CTA Mobile -->
+        <div
+            style="position: fixed; bottom: 0; left:0; width: 100%; padding: 15px; background: #050a08; border-top: 1px solid rgba(34, 197, 94, 0.3); box-shadow: 0 -4px 20px rgba(0,0,0,0.3); display: flex; justify-content: center; z-index: 100;">
+            <a href="#offer" class="btn-cta"
+                style="font-size: 1rem; padding: 15px; background: #22c55e; text-decoration: none;">Começar
+                Agora</a>
+        </div>
+
+    </div>
+
+    <script>
+        // FAQ Accordion Interaction
+        document.querySelectorAll('.faq-question').forEach(question => {
+            question.addEventListener('click', () => {
+                const item = question.parentElement;
+                item.classList.toggle('active');
+            });
+        });
+
+        // 15-Minute Countdown Timer
+        function startTimer(duration, display) {
+            let timer = duration, minutes, seconds;
+            setInterval(function () {
+                minutes = parseInt(timer / 60, 10);
+                seconds = parseInt(timer % 60, 10);
+
+                minutes = minutes < 10 ? "0" + minutes : minutes;
+                seconds = seconds < 10 ? "0" + seconds : seconds;
+
+                display.textContent = minutes + ":" + seconds;
+
+                if (--timer < 0) {
+                    timer = 0; // Keep at 00:00
+                }
+            }, 1000);
+        }
+
+        window.onload = function () {
+            const fifteenMinutes = 60 * 15;
+            const display = document.querySelector('#timer-display');
+            // Check if timer-display exists before starting the timer
+            if (display) {
+                startTimer(fifteenMinutes, display);
+            }
+        };
+
+        // Testimonial Carousel - Final Ultra-Advanced Enhancement
+        let currentSlide = 0;
+        let slideCount = 0;
+        let track = null;
+        let dotsContainer = null;
+        let startX = 0;
+        let isDragging = false;
+        let moveX = 0;
+
+        function updateCarousel() {
+            if (!track) return;
+            track.style.transform = `translateX(-${(currentSlide * 100) / slideCount}%)`;
+
+            // Update dots
+            const dots = document.querySelectorAll('.dot');
+            dots.forEach((dot, index) => {
+                dot.classList.toggle('active', index === currentSlide);
+            });
+        }
+
+        function nextSlide() {
+            currentSlide = (currentSlide + 1) % slideCount;
+            updateCarousel();
+        }
+
+        function prevSlide() {
+            currentSlide = (currentSlide - 1 + slideCount) % slideCount;
+            updateCarousel();
+        }
+
+        function goToSlide(index) {
+            currentSlide = index;
+            updateCarousel();
+        }
+
+        document.addEventListener('DOMContentLoaded', function () {
+            const slides = document.querySelectorAll('.testimonial-card');
+            track = document.querySelector('.carousel-track');
+            dotsContainer = document.getElementById('carousel-dots');
+
+            if (!track || slides.length === 0) return;
+
+            slideCount = slides.length;
+            track.style.width = `${slideCount * 100}%`;
+            slides.forEach(slide => {
+                slide.style.width = `${100 / slideCount}%`;
+            });
+
+            // Create Dots
+            for (let i = 0; i < slideCount; i++) {
+                const dot = document.createElement('div');
+                dot.className = `dot ${i === 0 ? 'active' : ''}`;
+                dot.onclick = () => goToSlide(i);
+                dotsContainer.appendChild(dot);
+            }
+
+            // Touch & Swipe Logic
+            const carousel = document.querySelector('.testimonial-carousel');
+
+            carousel.addEventListener('touchstart', (e) => {
+                startX = e.touches[0].clientX;
+                isDragging = true;
+                clearInterval(carouselInterval);
+            });
+
+            carousel.addEventListener('touchmove', (e) => {
+                if (!isDragging) return;
+                moveX = e.touches[0].clientX - startX;
+            });
+
+            carousel.addEventListener('touchend', () => {
+                if (!isDragging) return;
+                isDragging = false;
+                if (moveX < -50) {
+                    nextSlide();
+                } else if (moveX > 50) {
+                    prevSlide();
+                }
+                moveX = 0;
+                restartInterval();
+            });
+
+            // Mouse Drag Logic for Desktop Swipe
+            carousel.addEventListener('mousedown', (e) => {
+                startX = e.clientX;
+                isDragging = true;
+                clearInterval(carouselInterval);
+            });
+
+            window.addEventListener('mousemove', (e) => {
+                if (!isDragging) return;
+                moveX = e.clientX - startX;
+            });
+
+            window.addEventListener('mouseup', () => {
+                if (!isDragging) return;
+                isDragging = false;
+                if (moveX < -100) {
+                    nextSlide();
+                } else if (moveX > 100) {
+                    prevSlide();
+                }
+                moveX = 0;
+                restartInterval();
+            });
+
+            let carouselInterval = setInterval(nextSlide, 5000);
+
+            function restartInterval() {
+                clearInterval(carouselInterval);
+                carouselInterval = setInterval(nextSlide, 5000);
+            }
+
+            carousel.addEventListener('mouseenter', () => clearInterval(carouselInterval));
+            carousel.addEventListener('mouseleave', restartInterval);
+
+            updateCarousel();
+        });
+
+        // Dynamic Data Binding from localStorage
+        try {
+            const results = JSON.parse(localStorage.getItem('quiz_answers'));
+            if (results) {
+                const profileEl = document.getElementById('dynamic-profile');
+                if (profileEl) {
+                    const age = results['age'] || "30-39";
+                    const targetZone = results['target_zone'] || "Corpo inteiro";
+                    profileEl.innerHTML = `Baseado no seu perfil (<strong>Feminino, ${age}</strong>) e foco em <strong>${targetZone}</strong>, criamos a rotina perfeita para você.`;
+                }
+
+                // Advanced Diagnostic Logic (Generic Format)
+                const age = results['age'] || "30-39";
+                const activity = results['activity_level'] || "Sedentária";
+                const water = results['water_habit'] || "Cerca de 2 litros";
+                const weight = results['weight_perception'] || "Médio";
+                const zone = results['target_zone'] || "Barriga e Cintura";
+
+                // Mapping generic technical terms
+                let oxidationRate = "Baixa (Efeito Platô)";
+                if (activity.includes("Intensa")) oxidationRate = "Normal (Em risco de Platô)";
+
+                let metabolicStatus = "Bloqueio Metabólico Detectado";
+                let efficiency = "24%";
+                let basalStatus = "Ritmo Reduzido";
+
+                if (age.includes("50+") || age.includes("40")) {
+                    metabolicStatus = "Bloqueio Inflamatório Crônico";
+                    efficiency = "18%";
+                    basalStatus = "Processo Estagnado";
+                }
+
+                let visceralLevel = "Nível 4 (Moderado-Alto)";
+                if (weight.includes("Acima do peso")) visceralLevel = "Nível 5 (Severo)";
+
+                let inflammation = "Moderada";
+                if (water.includes("Quase nada") || water.includes("1 litro")) inflammation = "Nível Crítico (Retenção)";
+
+                // Binding elements
+                const metabTypeEl = document.getElementById('diag-metabolic-type');
+                const metabBasalEl = document.getElementById('diag-metabolic-basal');
+                const metabStatusEl = document.getElementById('diag-metabolic-status');
+                const basalRateEl = document.getElementById('diag-basal-rate');
+                const efficiencyEl = document.getElementById('diag-efficiency');
+                const visceralFatEl = document.getElementById('diag-visceral-fat');
+                const waterRetEl = document.getElementById('diag-water-retention');
+                const zoneEl = document.getElementById('diag-zone');
+                const zoneTextEl = document.getElementById('diag-zone-text');
+
+                if (metabTypeEl) metabTypeEl.textContent = "Taxa de Oxidação: " + oxidationRate;
+                if (metabBasalEl) metabBasalEl.textContent = "Fase Metabólica: " + basalStatus;
+
+                if (metabStatusEl) {
+                    metabStatusEl.textContent = metabolicStatus;
+                    metabStatusEl.style.color = (efficiency.includes("18%")) ? "#ef4444" : "#f59e0b";
+                }
+
+                if (basalRateEl) basalRateEl.textContent = "Taxa Basal: " + basalStatus; // Generic
+                if (efficiencyEl) efficiencyEl.textContent = "Eficiência: " + efficiency + " do ideal";
+                if (visceralFatEl) visceralFatEl.textContent = "Índice Visceral: " + visceralLevel;
+                if (waterRetEl) waterRetEl.textContent = "Status Inflamatório: " + inflammation;
+
+                if (zoneEl) zoneEl.textContent = zone;
+                if (zoneTextEl) zoneTextEl.textContent = zone;
+            }
+        } catch (e) {
+            console.error("Erro ao carregar dados do quiz", e);
+        }
+
+        // Order Bump Interaction
+        function toggleBump(element) {
+            const checkbox = element.querySelector('.order-bump-checkbox');
+            checkbox.checked = !checkbox.checked;
+
+            // Visual feedback
+            if (checkbox.checked) {
+                element.style.borderColor = "#22c55e";
+                element.style.background = "rgba(34, 197, 94, 0.15)";
+            } else {
+                element.style.borderColor = "rgba(34, 197, 94, 0.4)";
+                element.style.background = "rgba(34, 197, 94, 0.05)";
+            }
+        }
+
+        // Interstitial Logic & Countdown
+        document.addEventListener('DOMContentLoaded', function () {
+            const overlay = document.getElementById('optimization-overlay');
+            const bar = document.getElementById('opt-bar');
+
+            if (overlay) {
+                let progress = 0;
+                const interval = setInterval(() => {
+                    progress += 1.5;
+                    if (bar) bar.style.width = progress + '%';
+
+                    if (progress > 25) document.getElementById('opt-2').classList.add('active');
+                    if (progress > 50) document.getElementById('opt-3').classList.add('active');
+                    if (progress > 75) document.getElementById('opt-4').classList.add('active');
+
+                    if (progress >= 100) {
+                        clearInterval(interval);
+                        setTimeout(() => {
+                            overlay.style.opacity = '0';
+                            overlay.style.transition = 'opacity 0.8s ease';
+                            setTimeout(() => overlay.style.display = 'none', 800);
+                        }, 500);
+                    }
+                }, 50);
+            }
+
+            // Countdown Timer
+            let time = 15 * 60;
+            const timerDisplay = document.getElementById('timer');
+            if (timerDisplay) {
+                setInterval(() => {
+                    let minutes = Math.floor(time / 60);
+                    let seconds = time % 60;
+                    timerDisplay.textContent = `${minutes}:${seconds < 10 ? '0' : ''}${seconds}`;
+                    if (time > 0) time--;
+                }, 1000);
+            }
+        });
+    </script>
+</body>
+
+</html>

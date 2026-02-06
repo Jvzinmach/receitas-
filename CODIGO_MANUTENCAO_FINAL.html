@@ -1,0 +1,676 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Código de Manutenção Vitalícia - PDF</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700;800;900&display=swap"
+        rel="stylesheet">
+    <style>
+        :root {
+            --primary: #22c55e;
+            --primary-dark: #16a34a;
+            --bg-dark: #050a08;
+            --text-dark: #1e293b;
+            --text-muted: #64748b;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Montserrat', sans-serif;
+            line-height: 1.6;
+            color: var(--text-dark);
+            background: #f1f5f9;
+        }
+
+        .page {
+            width: 210mm;
+            min-height: 297mm;
+            padding: 20mm;
+            margin: 10mm auto;
+            background: white;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            position: relative;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            page-break-after: always;
+        }
+
+        @media print {
+            body {
+                background: none;
+            }
+
+            .page {
+                margin: 0;
+                box-shadow: none;
+            }
+        }
+
+        /* Capa */
+        .page-cover {
+            background: var(--bg-dark);
+            color: white;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+        }
+
+        .cover-content h1 {
+            font-size: 3.5rem;
+            font-weight: 900;
+            line-height: 1.1;
+            margin-bottom: 1.5rem;
+            color: var(--primary);
+            text-transform: uppercase;
+        }
+
+        .cover-content h2 {
+            font-size: 1.5rem;
+            font-weight: 400;
+            margin-bottom: 3rem;
+            color: #fff;
+            opacity: 0.9;
+        }
+
+        .cover-badge {
+            background: var(--primary);
+            color: #000;
+            padding: 10px 25px;
+            font-weight: 800;
+            border-radius: 50px;
+            font-size: 1.1rem;
+            margin-bottom: 2rem;
+        }
+
+        /* Headers */
+        h2 {
+            font-size: 2rem;
+            font-weight: 800;
+            color: var(--bg-dark);
+            margin-bottom: 1.5rem;
+            border-left: 6px solid var(--primary);
+            padding-left: 15px;
+            text-transform: uppercase;
+        }
+
+        p {
+            margin-bottom: 1.2rem;
+            text-align: justify;
+        }
+
+        strong {
+            color: var(--primary-dark);
+        }
+
+        ul {
+            margin-bottom: 1.5rem;
+            list-style: none;
+        }
+
+        li {
+            margin-bottom: 0.8rem;
+            display: flex;
+            gap: 10px;
+        }
+
+        li::before {
+            content: '✓';
+            color: var(--primary);
+            font-weight: bold;
+        }
+
+        /* Callouts */
+        .callout {
+            padding: 20px;
+            border-radius: 12px;
+            margin: 20px 0;
+            background: #f8fafc;
+            border-left: 4px solid var(--primary);
+        }
+
+        .callout-title {
+            font-weight: 800;
+            margin-bottom: 5px;
+            color: var(--primary-dark);
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        /* Footer */
+        .page-footer {
+            margin-top: auto;
+            border-top: 1px solid #e2e8f0;
+            padding-top: 10px;
+            font-size: 0.75rem;
+            color: var(--text-muted);
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .page-number::after {
+            content: counter(page);
+        }
+
+        .container {
+            flex: 1;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- PÁGINA 1: CAPA -->
+    <div class="page page-cover">
+        <div class="cover-content">
+            <div class="cover-badge">GUIA EXCLUSIVO</div>
+            <h1>Código de<br>Manutenção<br>Vitalícia</h1>
+            <h2>A Blindagem Anti-Efeito Sanfona</h2>
+            <div style="font-size: 1.2rem; margin-top: 2rem; font-weight: 600;">
+                O fim definitivo do medo de engordar.
+            </div>
+            <div style="margin-top: 5rem; opacity: 0.6; font-size: 0.9rem;">
+                Protocolo Barriga Zero | Edição 2026
+            </div>
+        </div>
+    </div>
+
+    <!-- PÁGINA 2 -->
+    <div class="page">
+        <div class="container">
+            <h2>A Mentira do Metabolismo</h2>
+            <p>Você já passou pela frustrante experiência de perder 5kg, 10kg ou até 15kg com um esforço hercúleo,
+                apenas para ver tudo voltar (e às vezes com juros) poucas semanas depois de "relaxar" um pouco? Se sim,
+                saiba que a culpa não foi da sua falta de disciplina. A culpa foi de uma mentira que te contaram sobre
+                como o metabolismo funciona.</p>
+            <p>A maioria das dietas tradicionais foca apenas no "déficit calórico" agressivo. Elas tratam seu corpo como
+                uma calculadora matemática: "coma menos, gaste mais". O problema é que seu corpo não é uma calculadora;
+                ele é um organismo biológico complexo guiado por milhões de anos de evolução. Quando você corta calorias
+                drasticamente, seu corpo não entende que você quer entrar naquele vestido; ele entende que você está
+                passando por uma <strong>Grande Fome</strong>.</p>
+            <p>Como mecanismo de sobrevivência, ele ativa o modo de economia de energia. Ele diminui sua queima basal,
+                degrada massa muscular e, o mais perigoso: ele bagunça seus hormônios. O <strong>rebote
+                    hormonal</strong> é o verdadeiro vilão do efeito sanfona. Seus níveis de leptina despencam, enquanto
+                a grelina explode.</p>
+            <p>O resultado? Quando a dieta acaba, você está com um metabolismo mais lento e uma fome animal. É a
+                tempestade perfeita para o acúmulo de gordura. Este guia existe para ensinar seu corpo que a "guerra"
+                acabou.</p>
+
+            <div class="callout">
+                <div class="callout-title">PONTOS CHAVE:</div>
+                <ul>
+                    <li><strong>O Erro da Restrição:</strong> Quanto menos você come, mais seu corpo estoca.</li>
+                    <li><strong>Colapso da Massa Magra:</strong> Perder músculo desacelera seu "motor".</li>
+                    <li><strong>Alarme de Sobrevivência:</strong> Seu cérebro prefere você pesado do que em perigo.</li>
+                </ul>
+            </div>
+
+            <div class="callout" style="background: rgba(34, 197, 94, 0.05);">
+                <div class="callout-title">💡 DICA DE OURO:</div>
+                Pare de tentar "enganar" sua biologia com fome. Comece a "colaborar" com ela fornecendo os nutrientes
+                certos que sinalizam abundância.
+            </div>
+        </div>
+        <div class="page-footer">
+            <span>Código de Manutenção Vitalícia</span>
+            <span>Página 2</span>
+        </div>
+    </div>
+
+    <!-- PÁGINA 3 -->
+    <div class="page">
+        <div class="container">
+            <h2>O Conceito da Blindagem</h2>
+            <p>Seja muito bem-vindo ao conceito que vai mudar sua relação com o espelho para sempre: a <strong>Blindagem
+                    Metabólica</strong>. Manter o peso não é uma questão de comer pouco para o resto da vida. É uma
+                questão de reprogramar o seu <strong>Set Point</strong>.</p>
+            <p>O <em>Set Point</em> é uma espécie de termostato interno que o seu cérebro possui. É o peso que o seu
+                corpo "acha" que é o certo para você. Provavelmente, nos últimos anos, seu termostato estava ajustado
+                para um peso alto. Por isso, sempre que você tentava baixar, o corpo lutava para subir de volta. A
+                Blindagem é o processo de reajustar esse termostato para baixo.</p>
+            <p>A verdadeira blindagem acontece quando você consegue comer uma pizza no sábado à noite e acordar no
+                domingo com o mesmo peso! Sim, isso é fisiologicamente possível quando seu metabolismo está "blindado".
+                Ele para de ver o excesso ocasional como um perigo e passa a vê-lo como um combustível extra que ele
+                pode simplesmente queimar ou dissipar como calor.</p>
+
+            <div class="callout">
+                <div class="callout-title">COMO A BLINDAGEM FUNCIONA:</div>
+                <ul>
+                    <li><strong>Reajuste Hormonal:</strong> Nivelamento dos hormônios da fome.</li>
+                    <li><strong>Eficiência Mitocondrial:</strong> Células que usam gordura como fonte de energia.</li>
+                    <li><strong>Estabilidade de Set Point:</strong> O tempo é seu aliado na nova regra.</li>
+                </ul>
+            </div>
+
+            <div class="callout" style="background: rgba(34, 197, 94, 0.05);">
+                <div class="callout-title">💡 DICA DE OURO:</div>
+                A blindagem não é um muro intransponível, mas sim um elástico forte. Se você esticar um pouco, ele te
+                puxa de volta rapidamente para o centro.
+            </div>
+        </div>
+        <div class="page-footer">
+            <span>Código de Manutenção Vitalícia</span>
+            <span>Página 3</span>
+        </div>
+    </div>
+
+    <!-- PÁGINA 4 -->
+    <div class="page">
+        <div class="container">
+            <h2>Pilar 1: A Regra dos 80/20</h2>
+            <p>Um dos maiores motivos de falha na manutenção é a busca pela perfeição. As pessoas acreditam que, para
+                manter o corpo dos sonhos, nunca mais poderão comer um chocolate ou tomar uma cerveja. Isso é
+                insustentável. A <strong>Regra dos 80/20</strong> é a base da sua liberdade.</p>
+            <p>A matemática é simples: se 80% do tempo você fornece ao seu corpo alimentos densos em nutrientes, os
+                outros 20% podem ser o que você bem entender. Isso não é um "dia do lixo", mas sim uma convivência
+                social saudável. Em uma semana com 21 refeições principais, isso significa que você tem cerca de 4
+                refeições totalmente livres para comer sem culpa.</p>
+            <p>O segredo aqui não é o que você come nos 20%, mas a qualidade absoluta dos 80%. Quando você está bem
+                nutrido, seu corpo se torna resiliente. Ele tem as enzimas e o ambiente hormonal para lidar com o açúcar
+                ou a gordura trans ocasional sem disparar o mecanismo de estocagem massiva.</p>
+
+            <div class="callout">
+                <div class="callout-title">ESTRATÉGIA PRÁTICA:</div>
+                <ul>
+                    <li><strong>Planejamento Mental:</strong> Saiba quais serão seus "momentos 20".</li>
+                    <li><strong>Nutrição de Base:</strong> Foque em proteínas em todas as refeições dos 80%.</li>
+                    <li><strong>Fim da Culpa:</strong> Coma, saboreie e siga em frente sem se martirizar.</li>
+                </ul>
+            </div>
+
+            <div class="callout" style="background: rgba(34, 197, 94, 0.05);">
+                <div class="callout-title">💡 DICA DE OURO:</div>
+                Nunca comece um "momento 20" (ex: uma festa) estando com muita fome. Faça um pequeno lanche proteico
+                antes para manter o controle.
+            </div>
+        </div>
+        <div class="page-footer">
+            <span>Código de Manutenção Vitalícia</span>
+            <span>Página 4</span>
+        </div>
+    </div>
+
+    <!-- PÁGINA 5 -->
+    <div class="page">
+        <div class="container">
+            <h2>Pilar 2: Flexibilidade Metabólica</h2>
+            <p>A <strong>Flexibilidade Metabólica</strong> é a capacidade do seu organismo de alternar entre queimar
+                açúcar e queimar gordura com facilidade. A maioria das pessoas com sobrepeso está "metabolicamente
+                engessada". O corpo delas só sabe queimar açúcar. Quando o açúcar acaba, elas sentem tontura e fome
+                incontrolável.</p>
+            <p>Para blindar seu peso, precisamos treinar seu motor para ser "flex". Isso se faz através da alternância
+                estratégica de macronutrientes. Quando você ensina seu corpo a usar a própria gordura como energia
+                durante o dia, e a usar aquela pizza para repor o glicogênio muscular, você se torna uma máquina de
+                oxidação eficiente.</p>
+            <p>Um corpo metabolicamente flexível não sofre com picos de insulina descontrolados. Ele lida com o
+                carboidrato, joga para dentro do músculo e volta rapidamente para o modo de queima de gordura. É esse
+                "vai e vem" que garante que você não acumule gordura nova.</p>
+
+            <div class="callout">
+                <div class="callout-title">COMO DESENVOLVER:</div>
+                <ul>
+                    <li><strong>Treino de Resistência:</strong> Músculos são o principal destino do açúcar.</li>
+                    <li><strong>Varie os Estímulos:</strong> Não coma exatamente a mesma coisa todo dia.</li>
+                    <li><strong>Jejum Fisiológico:</strong> Respeite o intervalo de 12h entre a janta e o café.</li>
+                </ul>
+            </div>
+
+            <div class="callout" style="background: rgba(34, 197, 94, 0.05);">
+                <div class="callout-title">💡 DICA DE OURO:</div>
+                A flexibilidade metabólica é como um músculo: quanto mais você a exercita, mais forte e rápida ela fica.
+            </div>
+        </div>
+        <div class="page-footer">
+            <span>Código de Manutenção Vitalícia</span>
+            <span>Página 5</span>
+        </div>
+    </div>
+
+    <!-- PÁGINA 6 -->
+    <div class="page">
+        <div class="container">
+            <h2>O Ritual do Final de Semana</h2>
+            <p>O final de semana é o "triângulo das Bermudas" do emagrecimento. Mas no Código, o final de semana não é
+                um inimigo, é o campo de treinamento para a sua liberdade. O segredo não é evitar o lazer, mas sim
+                dominar o <strong>Ritual do Final de Semana</strong>.</p>
+            <p>Um erro comum é entrar no sábado sem comer nada o dia todo para "compensar" a janta. Isso é um convite
+                para o desastre. Ao chegar faminto, você devora tudo sem sentir o gosto. O ritual correto envolve
+                proteger o metabolismo antes do evento social.</p>
+            <p>Comece o final de semana com fibras e proteínas extras. Se tem um jantar, faça um lanche proteico 1 hora
+                antes. Isso estabiliza sua glicemia e garante decisões racionais. Escolha o que você realmente ama e
+                ignore o que é "apenas ok".</p>
+
+            <div class="callout">
+                <div class="callout-title">PASSOS DO RITUAL:</div>
+                <ul>
+                    <li><strong>Pré-Abastecimento Proteico:</strong> Nunca chegue faminto aos eventos.</li>
+                    <li><strong>Seleção de Prioridades:</strong> Coma o extraordinário, ignore o comum.</li>
+                    <li><strong>Compensação Ativa:</strong> Mantenha o café e almoço leves se vai exagerar na janta.
+                    </li>
+                </ul>
+            </div>
+
+            <div class="callout" style="background: rgba(34, 197, 94, 0.05);">
+                <div class="callout-title">💡 DICA DE OURO:</div>
+                O final de semana termina no domingo à noite. Estabeleça um horário de "corte" para voltar à
+                estabilidade.
+            </div>
+        </div>
+        <div class="page-footer">
+            <span>Código de Manutenção Vitalícia</span>
+            <span>Página 6</span>
+        </div>
+    </div>
+
+    <!-- PÁGINA 7 -->
+    <div class="page">
+        <div class="container">
+            <h2>Gerenciamento de Danos</h2>
+            <p>Exagerou? Comeu três pedaços de bolo a mais? A primeira coisa a fazer é: <strong>respirar</strong>. O
+                maior dano de um exagero não é calórico, é psicológico. O pensamento do "já que estraguei mesmo..." é o
+                que realmente engorda. No Código, trabalhamos com <strong>Gerenciamento de Danos</strong>.</p>
+            <p>O seu corpo é resiliente. Um único dia de excesso não cria 1kg de gordura pura. O que você vê na balança
+                é inflamação e retenção de água. O objetivo do dia seguinte é anular essa resposta rapidamente com o
+                <strong>Dia da Purificação</strong>.</p>
+            <p>O Dia da Purificação foca em descansar o sistema digestivo. Beba 3 a 4 litros de água, coma muitos
+                vegetais verdes e proteínas magras. Evite farinhas e açúcar por 24 horas. O movimento também ajuda a
+                "sugar" o açúcar extra do sangue para os músculos.</p>
+
+            <div class="callout">
+                <div class="callout-title">ESTRATÉGIAS:</div>
+                <ul>
+                    <li><strong>Sem Punição:</strong> Esqueça a culpa, foque na ação de limpeza.</li>
+                    <li><strong>Poder dos Chás:</strong> Chá verde ou erva-mate ajudam na diurese.</li>
+                    <li><strong>Retorno Imediato:</strong> Volte ao plano limpo sem pular refeições.</li>
+                </ul>
+            </div>
+
+            <div class="callout" style="background: rgba(34, 197, 94, 0.05);">
+                <div class="callout-title">💡 DICA DE OURO:</div>
+                A balança mente após um exagero. Não se pese por pelo menos 3 dias após uma festa.
+            </div>
+        </div>
+        <div class="page-footer">
+            <span>Código de Manutenção Vitalícia</span>
+            <span>Página 7</span>
+        </div>
+    </div>
+
+    <!-- PÁGINA 8 -->
+    <div class="page">
+        <div class="container">
+            <h2>Nutrição Inteligente sem Balança</h2>
+            <p>O objetivo da manutenção vitalícia é a <strong>Autonomia</strong>. Você precisa aprender a montar pratos
+                por instinto, usando apenas olhos e mãos como guia. Isso é o que chamamos de Nutrição Inteligente.</p>
+            <p>A base de um prato blindado é visual: Metade do prato com vegetais coloridos. A outra metade dividida
+                entre uma proteína (palma da mão aberta) e um carboidrato/gordura (punho fechado). Essa proporção
+                garante volume, saciedade e energia sem pesar um grama.</p>
+            <p>Aprenda a ler os sinais de fome real vs. fome emocional. A fome de estômago surge gradualmente. A fome de
+                cabeça é súbita e específica. Além disso, coma devagar: seu cérebro demora 20 minutos para receber o
+                sinal de saciedade.</p>
+
+            <div class="callout">
+                <div class="callout-title">REGRAS DO INSTINTO:</div>
+                <ul>
+                    <li><strong>Proporcional Visual:</strong> 50% Vegetais, 25% Proteína, 25% Acompanhamentos.</li>
+                    <li><strong>Teste do Brócolis:</strong> Se não comeria brócolis agora, não é fome real.</li>
+                    <li><strong>Mastigação Consciente:</strong> Mastigue até virar uma pasta.</li>
+                </ul>
+            </div>
+
+            <div class="callout" style="background: rgba(34, 197, 94, 0.05);">
+                <div class="callout-title">💡 DICA DE OURO:</div>
+                Use pratos menores. O cérebro avalia a saciedade visualmente; um prato pequeno cheio satisfaz mais.
+            </div>
+        </div>
+        <div class="page-footer">
+            <span>Código de Manutenção Vitalícia</span>
+            <span>Página 8</span>
+        </div>
+    </div>
+
+    <!-- PÁGINA 9 -->
+    <div class="page">
+        <div class="container">
+            <h2>O Hormônio da Fome (Grelina)</h2>
+            <p>Para dominar seu peso, você precisa conhecer o seu "adversário": a <strong>Grelina</strong>. Ela diz ao
+                cérebro: "Ei, encontre comida agora!". Em dietas restritivas, a grelina fica cronicamente elevada,
+                gerando compulsão.</p>
+            <p>O segredo para domar a grelina é proteínas e fibras, que "esticam" as paredes do estômago e inibem sua
+                produção por mais tempo. A grelina também é sensível ao estresse e ao sono. O estresse crônico faz a
+                grelina disparar, pedindo energia rápida (doces).</p>
+            <p>Quando você doma a grelina, você retira o "volume" da voz que grita pedindo comida. Você passa a ter
+                silêncio mental para decidir o que e quanto comer, sem precisar de força de vontade extrema.</p>
+
+            <div class="callout">
+                <div class="callout-title">COMO APAGAR A FOME:</div>
+                <ul>
+                    <li><strong>Proteína no Café:</strong> Ovos ou whey reduzem a grelina para o dia todo.</li>
+                    <li><strong>Volume Gástrico:</strong> Beba água antes da refeição principal.</li>
+                    <li><strong>Manejo do Estresse:</strong> Quando o cortisol sobe, a grelina vai junto.</li>
+                </ul>
+            </div>
+
+            <div class="callout" style="background: rgba(34, 197, 94, 0.05);">
+                <div class="callout-title">💡 DICA DE OURO:</div>
+                A grelina vem em ondas. Sente fome súbita? Tome água e espere 15 minutos; a onda costuma passar.
+            </div>
+        </div>
+        <div class="page-footer">
+            <span>Código de Manutenção Vitalícia</span>
+            <span>Página 9</span>
+        </div>
+    </div>
+
+    <!-- PÁGINA 10 -->
+    <div class="page">
+        <div class="container">
+            <h2>Hidratação Estratégica</h2>
+            <p>Muitas vezes, o que você interpreta como fome é <strong>sede disfarçada</strong>. A hidratação
+                estratégica é uma das ferramentas mais baratas e potentes da sua Blindagem. A água é crucial para a
+                <strong>lipólise</strong> (queima de gordura).</p>
+            <p>Se você está desidratado, seu metabolismo desacelera para preservar líquidos. Além disso, a água mantém o
+                volume de sangue adequado para que oxigênio chegue aos músculos, mantendo-os ativos e queimando calorias
+                mesmo em repouso.</p>
+            <p>Beber 500ml ao acordar ajuda a eliminar toxinas. Beber água entre as refeições previne lanches
+                desnecessários. Se sua urina estiver clara, você está em modo de fluxo e queima eficiente.</p>
+
+            <div class="callout">
+                <div class="callout-title">PROTOCOLO BLINDADO:</div>
+                <ul>
+                    <li><strong>Shot do Despertar:</strong> 500ml de água natural ao sair da cama.</li>
+                    <li><strong>Escudo Pré-Refeição:</strong> 300ml de água 20 min antes do almoço/jantar.</li>
+                    <li><strong>Regra da Sobriedade:</strong> 1 copo de água para cada copo de outra bebida.</li>
+                </ul>
+            </div>
+
+            <div class="callout" style="background: rgba(34, 197, 94, 0.05);">
+                <div class="callout-title">💡 DICA DE OURO:</div>
+                Vontade de doce? Tome água com gás e limão. O gás e a acidez resetam seu paladar.
+            </div>
+        </div>
+        <div class="page-footer">
+            <span>Código de Manutenção Vitalícia</span>
+            <span>Página 10</span>
+        </div>
+    </div>
+
+    <!-- PÁGINA 11 -->
+    <div class="page">
+        <div class="container">
+            <h2>Sono e Peso</h2>
+            <p>O seu novo peso é defendido (ou destruído) enquanto você dorme. O <strong>Sono Reparador</strong> é o
+                segredo das pessoas que mantêm o corpo magro com facilidade. Uma única noite mal dormida sabota todo seu
+                esforço metabólico.</p>
+            <p>Com menos de 7h de sono, o cortisol sobe, sinalizando estoque de gordura abdominal. A grelina sobe e a
+                leptina desce. Durante o sono profundo, liberamos GH, o potente hormônio queimador de gordura e
+                reconstrutor muscular.</p>
+            <p>Desta forma, higiene do sono é fundamental: evite luz azul 1h antes de deitar e mantenha o quarto escuro
+                e fresco. Dormir bem é um tratamento metabólico gratuito todas as noites.</p>
+
+            <div class="callout">
+                <div class="callout-title">PRINCÍPIOS DO SONO:</div>
+                <ul>
+                    <li><strong>Ciclo do Escuro:</strong> Melatonina só é liberada no escuro total.</li>
+                    <li><strong>Temperatura:</strong> Quarto frio ajuda a entrar em sono profundo.</li>
+                    <li><strong>Desconexão Digital:</strong> Brilho da tela bloqueia a queima noturna.</li>
+                </ul>
+            </div>
+
+            <div class="callout" style="background: rgba(34, 197, 94, 0.05);">
+                <div class="callout-title">💡 DICA DE OURO:</div>
+                Trate seu horário de dormir com o mesmo respeito que uma reunião importante. O sono é a base invisível.
+            </div>
+        </div>
+        <div class="page-footer">
+            <span>Código de Manutenção Vitalícia</span>
+            <span>Página 11</span>
+        </div>
+    </div>
+
+    <!-- PÁGINA 12 -->
+    <div class="page">
+        <div class="container">
+            <h2>Checklist Diário de Manutenção</h2>
+            <p>Manter o peso não deve ser um fardo, mas pequenos hábitos automáticos. Use este <strong>Checklist
+                    Diário</strong>. Consistência é mais importante que perfeição. Marque pelo menos 80% desses itens
+                todos os dias.</p>
+            <p>Comece o dia com intenção (água em jejum). Siga a estrutura visual nas refeições. Mova o corpo de alguma
+                forma para manter a sensibilidade à insulina alta. Monitore seu comportamento, não apenas o peso.</p>
+            <p>Gerencie o estresse com 5-10 minutos de "vazio" mental. Um corpo relaxado não precisa de açúcar para se
+                sentir seguro.</p>
+
+            <div class="callout">
+                <div class="callout-title">CHECKLIST DIÁRIO:</div>
+                <ul>
+                    <li>[ ] 500ml de água em jejum.</li>
+                    <li>[ ] Proteína em todas as 3 refeições principais.</li>
+                    <li>[ ] Metade do prato com vegetais coloridos.</li>
+                    <li>[ ] 8.000 passos ou 30 min de atividade.</li>
+                    <li>[ ] Sem telas 60 min antes de dormir.</li>
+                    <li>[ ] 35ml de água por kg de peso corporal.</li>
+                    <li>[ ] Um momento de prazer que não envolva comida.</li>
+                </ul>
+            </div>
+
+            <div class="callout" style="background: rgba(34, 197, 94, 0.05);">
+                <div class="callout-title">💡 DICA DE OURO:</div>
+                Cole este checklist na geladeira. O contato visual diário reforça sua nova identidade saudável.
+            </div>
+        </div>
+        <div class="page-footer">
+            <span>Código de Manutenção Vitalícia</span>
+            <span>Página 12</span>
+        </div>
+    </div>
+
+    <!-- PÁGINA 13 -->
+    <div class="page">
+        <div class="container">
+            <h2>Plano de Emergência "Sinal Vermelho"</h2>
+            <p>A vida acontece. O problema não é engordar 2kg em uma viagem, o problema é deixar esses 2kg virarem 10kg.
+                Para isso serve o seu <strong>Plano de Emergência Sinal Vermelho</strong>.</p>
+            <p>O sinal é ativado quando você sobe 2kg além da meta. Quando isso ocorre, você entra no <strong>Protocolo
+                    de Choque de 7 Dias</strong>: elimine 100% dos supérfluos e foque em proteínas magras, folhas e
+                gorduras boas.</p>
+            <p>Aumente a intensidade do movimento nessa semana para esvaziar os estoques de glicogênio. Este plano serve
+                para te dar segurança e remover a ansiedade de deslizes casuais.</p>
+
+            <div class="callout">
+                <div class="callout-title">COMO EXECUTAR:</div>
+                <ul>
+                    <li><strong>Ponto de Corte:</strong> Defina hoje o peso que aciona o sinal.</li>
+                    <li><strong>Aceleração:</strong> 7 dias de limpeza absoluta sem exceções.</li>
+                    <li><strong>Foco na Drenagem:</strong> Água, chás e zero sódio refinado.</li>
+                </ul>
+            </div>
+
+            <div class="callout" style="background: rgba(34, 197, 94, 0.05);">
+                <div class="callout-title">💡 DICA DE OURO:</div>
+                Use como ferramenta técnica rara. Se precisa dele todo mês, sua regra 80/20 está errada.
+            </div>
+        </div>
+        <div class="page-footer">
+            <span>Código de Manutenção Vitalícia</span>
+            <span>Página 13</span>
+        </div>
+    </div>
+
+    <!-- PÁGINA 14 -->
+    <div class="page">
+        <div class="container">
+            <h2>Mentalidade Blindada</h2>
+            <p>A Blindagem definitiva está na sua <strong>Mente</strong>. O maior inimigo é o ciclo de "Crime e
+                Castigo". Pare de punir seus exageros com exercícios absurdos ou jejuns extremos.</p>
+            <p>Mude o vocabulário: você não "furou a dieta", você fez uma escolha consciente. O exercício não é para
+                queimar calorias, mas para celebrar sua força e saúde. Veja-se como uma pessoa saudável que cuida do
+                corpo.</p>
+            <p>A manutenção requer autocompaixão. Terá dias ruins, e está tudo bem. O segredo de quem não engorda é a
+                velocidade com que eles voltam para a base após um tropeço.</p>
+
+            <div class="callout">
+                <div class="callout-title">PILARES DA MENTE:</div>
+                <ul>
+                    <li><strong>Fim do Julgamento:</strong> Comida é energia e prazer.</li>
+                    <li><strong>Foco na Identidade:</strong> Decida pela pessoa que quer ser.</li>
+                    <li><strong>Consistência:</strong> 15 min de treino feito é melhor que 1h planejada.</li>
+                </ul>
+            </div>
+
+            <div class="callout" style="background: rgba(34, 197, 94, 0.05);">
+                <div class="callout-title">💡 DICA DE OURO:</div>
+                A cada refeição, você está votando no tipo de pessoa que quer se tornar. Vote na sua melhor versão.
+            </div>
+        </div>
+        <div class="page-footer">
+            <span>Código de Manutenção Vitalícia</span>
+            <span>Página 14</span>
+        </div>
+    </div>
+
+    <!-- PÁGINA 15 -->
+    <div class="page">
+        <div class="container">
+            <h2>Conclusão e Próximos Passos</h2>
+            <p>Parabéns! Você agora detém as chaves para a sua <strong>Liberdade Vitalícia</strong>. Você deixou para
+                trás as restrições malucas e entrou na era da inteligência metabólica. O medo de engordar não tem mais
+                poder sobre você.</p>
+            <p>A manutenção é dinâmica. Use os princípios — 80/20, flexibilidade, domínio hormonal e força mental — como
+                seu manual permanente. Use os recursos do App para monitorar seu progresso e se manter inspirada.</p>
+            <p>Vá lá fora e viva! Comemore, viaje, olhe-se no espelho com orgulho. A sua manutenção é a sua maior
+                vitória e o seu corpo é o único lugar que você tem para morar. Trate-o com o carinho e inteligência que
+                ele merece.</p>
+
+            <div class="callout">
+                <div class="callout-title">SUAS AÇÕES:</div>
+                <ul>
+                    <li><strong>Imprima o Checklist:</strong> Deixe-o visível no seu dia a dia.</li>
+                    <li><strong>Defina seu Sinal Vermelho:</strong> Escolha o peso de alerta hoje.</li>
+                    <li><strong>Compartilhe:</strong> Inspire outras mulheres na nossa comunidade.</li>
+                </ul>
+            </div>
+
+            <div class="callout" style="background: rgba(34, 197, 94, 0.05);">
+                <div class="callout-title">💡 PALAVRA FINAL:</div>
+                O seu corpo é sagrado. Blinde-o com conhecimento e desfrute da sua nova vida. Você é imparável!
+            </div>
+        </div>
+        <div class="page-footer">
+            <span>Código de Manutenção Vitalícia</span>
+            <span>Página 15</span>
+        </div>
+    </div>
+
+</body>
+
+</html>

@@ -1,0 +1,4 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 200" fill="#22c55e">
+  <!-- Retangulo (Rectangle): Straight up and down -->
+  <path d="M30,40 L30,160 L70,160 L70,40 Z" />
+</svg>
